@@ -104,7 +104,7 @@ a:hover { color: var(--ink); }
 
 .hero-media { position: relative; border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
 .hero-media picture { display: block; }
-.hero-img { width: 100%; height: clamp(420px, 62vw, 760px); object-fit: cover; display: block; filter: saturate(1.08) contrast(1.06); }
+.hero-img { width: 100%; height: clamp(360px, 48vw, 620px); object-fit: cover; display: block; filter: saturate(1.08) contrast(1.06); }
 .stamp {
   position: absolute; left: clamp(16px, 5vw, 56px); bottom: clamp(16px, 3vw, 32px);
   background: var(--bg); border: 3px solid var(--ink); padding: 10px 16px;
