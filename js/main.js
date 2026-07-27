@@ -534,6 +534,11 @@ function mountRouteMap() {
     const s = document.createElement('script');
     s.src = 'https://strava-embeds.com/embed.js';
     document.body.appendChild(s);
+  } else {
+    // render() replaces the whole app markup, so #hv-route-map (and its
+    // placeholder) is recreated each time; the embed script only scans
+    // placeholders once on load, so it must be re-run manually here.
+    window.__STRAVA_EMBED_BOOTSTRAP__?.();
   }
 }
 
