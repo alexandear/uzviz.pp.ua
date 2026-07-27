@@ -10,15 +10,18 @@ const PHOTOS_2025_URL = 'https://www.facebook.com/media/set/?vanity=piskun.oleg&
 
 const HERO_IMAGE = 'assets/2024-hero-cobblestone-climb.jpg';
 const GALLERY_IMAGES = [
-  'assets/2024-gallery-climb-group.jpg',
-  'assets/DSC04645.jpg',
-  'assets/DSC04690.jpg',
-  'assets/DSC04796.jpg',
-  'assets/DSC04848.jpg',
-  'assets/DSC05205.jpg',
-  'assets/DSC05247.jpg',
+  'assets/DSC05662.jpg',
+  'assets/DSC05783.jpg',
+  'assets/DSC04481.jpg',
+  'assets/DSC05177.jpg',
+  'assets/DSC05382.jpg',
+  'assets/DSC05445.jpg',
   'assets/DSC05337.jpg',
-  'assets/DSC05511.jpg',
+  'assets/DSC05451.jpg',
+  'assets/DSC05964.jpg',
+  'assets/DSC05991.jpg',
+  'assets/DSC06034.jpg',
+  'assets/DSC06013.jpg',
 ];
 
 const content = {
@@ -205,7 +208,7 @@ const content = {
 const FACT_CELL_DEFAULT = { bg: '#F4EFE4', fg: '#17130E', sub: '#5B5648' };
 const FACT_CELL_HIGHLIGHT = { bg: '#E23A00', fg: '#F4EFE4', sub: '#FBEBDD' };
 
-const PHOTO_DATE = { ua: '2 лис 2025', en: '2 Nov 2025' };
+const PHOTO_DATE = { ua: '2 лис 2024', en: '2 Nov 2024' };
 
 const state = {
   lang: 'ua',
@@ -242,6 +245,18 @@ function escapeHtml(str) {
 
 function escapeHtmlMultiline(str) {
   return escapeHtml(str).replace(/\n/g, '<br>');
+}
+
+function webpOf(jpgSrc) {
+  return jpgSrc.replace(/\.jpg$/, '.webp');
+}
+
+function thumbOf(jpgSrc) {
+  return jpgSrc.replace('assets/', 'assets/thumbs/');
+}
+
+function picture(src, attrs) {
+  return `<picture><source srcset="${webpOf(src)}" type="image/webp"><img src="${src}" ${attrs}></picture>`;
 }
 
 function render() {
@@ -304,7 +319,7 @@ function render() {
         </div>
       </div>
       <div class="hero-media">
-        <img src="${HERO_IMAGE}" alt="Велосипедисти піднімаються бруківкою узвозу" class="hero-img">
+        ${picture(HERO_IMAGE, 'alt="Велосипедисти піднімаються бруківкою узвозу" class="hero-img"')}
         <div class="stamp">${escapeHtml(c.heroStamp)}</div>
         <a href="https://sportmoments.photo/" target="_blank" rel="noopener" class="photo-credit">${escapeHtml(c.photoCredit)} ↗</a>
       </div>
@@ -335,7 +350,7 @@ function render() {
         <h2 class="section-heading"><a href="#gallery" class="heading-link">${escapeHtml(c.galleryHeading)}</a></h2>
         <p class="section-sub">${escapeHtml(c.gallerySub)}</p>
         <div class="gallery-grid" data-action="open-lightbox">
-          ${GALLERY_IMAGES.map((src, i) => `<figure class="gallery-figure" data-index="${i}"><img src="${src}" alt=""></figure>`).join('')}
+          ${GALLERY_IMAGES.map((src, i) => `<figure class="gallery-figure" data-index="${i}">${picture(thumbOf(src), 'alt="" loading="lazy"')}</figure>`).join('')}
         </div>
         <div class="gallery-years">
           <span class="years-label">${escapeHtml(c.galleryCta)}</span>
@@ -461,7 +476,7 @@ function render() {
 
     ${state.photo >= 0 ? `
     <div data-action="close-lightbox" role="dialog" aria-modal="true" class="lightbox">
-      <div class="lightbox-img" style="background-image: url('${GALLERY_IMAGES[state.photo]}');"></div>
+      <div class="lightbox-img" style="background-image: url('${GALLERY_IMAGES[state.photo]}'); background-image: image-set(url('${webpOf(GALLERY_IMAGES[state.photo])}') type('image/webp'), url('${GALLERY_IMAGES[state.photo]}') type('image/jpeg'));"></div>
       <div class="lightbox-controls">
         <button type="button" data-action="prev-photo" aria-label="Previous" class="lightbox-btn">←</button>
         <span class="lightbox-counter">${state.photo + 1} / ${GALLERY_IMAGES.length}</span>
