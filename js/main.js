@@ -219,7 +219,7 @@ const FACT_CELL_HIGHLIGHT = { bg: '#E23A00', fg: '#F4EFE4', sub: '#FBEBDD' };
 const PHOTO_DATE = { ua: '2 лис 2024', en: '2 Nov 2024' };
 
 const state = {
-  lang: 'ua',
+  lang: localStorage.getItem('lang') === 'en' ? 'en' : 'ua',
   menuOpen: false,
   faqOpen: 0,
   photo: -1,
@@ -546,8 +546,10 @@ document.addEventListener('click', (e) => {
   const btn = e.target.closest('[data-action]');
   if (!btn) return;
   const action = btn.dataset.action;
-  if (action === 'lang-ua') state.lang = 'ua';
-  else if (action === 'lang-en') state.lang = 'en';
+  if (action === 'lang-ua' || action === 'lang-en') {
+    state.lang = action === 'lang-en' ? 'en' : 'ua';
+    localStorage.setItem('lang', state.lang);
+  }
   else if (action === 'toggle-menu') state.menuOpen = !state.menuOpen;
   else if (action === 'faq-toggle') {
     const i = Number(btn.dataset.index);
