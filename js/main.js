@@ -218,8 +218,14 @@ const FACT_CELL_HIGHLIGHT = { bg: '#E23A00', fg: '#F4EFE4', sub: '#FBEBDD' };
 
 const PHOTO_DATE = { ua: '2 лис 2024', en: '2 Nov 2024' };
 
+function initialLang() {
+  const saved = localStorage.getItem('lang');
+  if (saved === 'en' || saved === 'ua') return saved;
+  return navigator.language.toLowerCase().startsWith('uk') ? 'ua' : 'en';
+}
+
 const state = {
-  lang: localStorage.getItem('lang') === 'en' ? 'en' : 'ua',
+  lang: initialLang(),
   menuOpen: false,
   faqOpen: 0,
   photo: -1,
