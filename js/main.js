@@ -29,11 +29,11 @@ const content = {
     brand: 'Гори Вище',
     navHome: 'Головна', navRoute: 'Маршрут', navArchive: 'Світлини', navVoices: 'Відгуки', navStory: 'Історія', navSchedule: 'План дня', navRecords: 'Результати', navFaq: 'FAQ',
     ctaPrimary: 'Зареєструватись', ctaSecondary: 'Положення',
-    heroKicker: 'Аматорський вело-підйом · Київ · 1 серпня 2026',
+    heroKicker: 'Аматорський вело-підйом · Київ · 1 серпня',
     heroTitle: 'Три хвилини болю. І це того варте.',
     heroSub: 'Спринт вгору «Гори Вище»: 880 метрів Смородинського узвозу, бруківка, дві спроби і фінал на нервах. Тобі не треба бути PRO — треба лиш наважитись приїхати.',
     heroStamp: 'Смородинський узвіз · Татарка',
-    photoCredit: 'Фото: sportmoments.photo',
+    photoCredit: 'sportmoments.photo',
     routeHeading: 'Strava',
     linkStart: 'Старт', linkRoute: 'Узвіз', linkFinish: 'Фініш',
     factsHeading: 'Траса в ЧИСЛАХ',
@@ -122,11 +122,11 @@ const content = {
     brand: 'Hory Vyshche',
     navHome: 'Home', navRoute: 'Route', navArchive: 'Photos', navVoices: 'Reviews', navStory: 'Story', navSchedule: 'Schedule', navRecords: 'Results', navFaq: 'FAQ',
     ctaPrimary: 'Register', ctaSecondary: 'Rules',
-    heroKicker: 'Amateur bike climb · Kyiv · August 1, 2026',
+    heroKicker: 'Amateur bike climb · Kyiv · August 1',
     heroTitle: 'Three minutes of pain. Worth every second.',
     heroSub: 'Uphill sprint «Hory Vyshche»: 880 meters of Smorodynskyi Uzviz cobblestone, two attempts, and a nail-biting final. You don’t need to be a pro — you just need to dare to show up.',
     heroStamp: 'Smorodynskyi Uzviz · Tatarka',
-    photoCredit: 'Photo: sportmoments.photo',
+    photoCredit: 'sportmoments.photo',
     routeHeading: 'Strava',
     linkStart: 'Start', linkRoute: 'Uzviz', linkFinish: 'Finish',
     factsHeading: 'The course in numbers',
@@ -449,8 +449,10 @@ function render() {
             ${yr.rows.map((item) => `
             <div class="results-item">
               <span class="results-category">${escapeHtml(item.category)}</span>
-              <a href="${escapeHtml(item.strava)}" target="_blank" rel="noopener" class="results-winner">${escapeHtml(item.winner)}</a>
-              <span class="results-time">${escapeHtml(item.time)}</span>
+              <span class="results-result">
+                <a href="${escapeHtml(item.strava)}" target="_blank" rel="noopener" class="results-winner">${escapeHtml(item.winner)}</a>
+                <span class="results-time">${escapeHtml(item.time)}</span>
+              </span>
             </div>`).join('')}
             <div class="rule-top"></div>
             <a href="${escapeHtml(yr.protocol)}" target="_blank" rel="noopener" class="year-link results-protocol-link">${escapeHtml(yr.protocolLabel)} →</a>

@@ -192,8 +192,9 @@ a:hover { color: var(--ink); }
 .results-section { padding: 0 0 clamp(44px, 6vw, 72px); }
 .results-years-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: clamp(24px, 4vw, 48px); }
 .results-year-heading { font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(18px, 2.2vw, 24px); margin: 0 0 14px; }
-.results-item { display: flex; flex-wrap: wrap; gap: 6px 20px; justify-content: space-between; padding: 13px 0; border-top: 2px solid var(--ink); align-items: baseline; }
-.results-category { font-size: 14.5px; color: var(--muted); flex: 1 1 150px; }
+.results-item { display: flex; flex-wrap: nowrap; gap: 6px 20px; justify-content: space-between; padding: 12px 0; border-top: 2px solid var(--ink); align-items: baseline; }
+.results-category { font-size: 14.5px; color: var(--muted); flex: 1 1 auto; min-width: 0; }
+.results-result { display: flex; flex: 0 0 auto; gap: 6px 20px; align-items: baseline; white-space: nowrap; }
 .results-winner { font-weight: 600; font-size: 16px; color: var(--ink); text-decoration: none; border-bottom: 2px solid var(--accent); }
 .results-time { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 17px; color: var(--accent); }
 .results-protocol-link { margin-top: 18px; padding: 12px 20px; }
@@ -288,7 +289,7 @@ a:hover { color: var(--ink); }
 /* phones: pull corner-pinned captions into normal flow so they can't overlap */
 @media (max-width: 480px) {
   .hero-media { display: flex; flex-direction: column; }
-  .stamp, .photo-credit { position: static; align-self: flex-start; }
+  .stamp, .photo-credit { position: static; align-self: stretch; text-align: center; }
   .photo-credit { margin-top: -3px; }
   .lightbox-date, .lightbox-credit { position: static; }
 }
