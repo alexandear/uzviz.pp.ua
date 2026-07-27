@@ -3,6 +3,11 @@
 const RACE_DATE = new Date('2026-08-01T09:01:00+03:00').getTime();
 const REG_DATE = new Date('2026-07-30T18:00:00+03:00').getTime();
 
+const REGISTER_URL = 'https://e.ticketme.org/events/Hory-vyshche-2026';
+const RULES_URL = 'https://timingevents.com/events/25180073';
+const PHOTOS_2024_URL = 'https://sportmoments.photo/gallery.php?album=go_higher_2024';
+const PHOTOS_2025_URL = 'https://www.facebook.com/media/set/?vanity=piskun.oleg&set=a.24296077950048786';
+
 const HERO_IMAGE = 'assets/2024-hero-cobblestone-climb.jpg';
 const GALLERY_IMAGES = [
   'assets/2024-gallery-climb-group.jpg',
@@ -67,17 +72,17 @@ const content = {
     resultsHeading: 'РЕКОРДИ, які чекають, щоб їх побили',
     resultsSub: 'Переможці 2024 і 2025 років. Хтось має зняти ці рекорди. Чому не ти?',
     resultYears: [
-      { year: 'Переможці 2024', protocol: '#', protocolLabel: 'Протокол 2024', rows: [
-        { category: 'Чоловіки, пряме кермо', winner: 'Юрій Кресан', time: '2:39', strava: '#' },
-        { category: 'Жінки, пряме кермо', winner: 'Наталія Ковалевська', time: '3:45', strava: '#' },
-        { category: 'Чоловіки, кермо «баран»', winner: 'Павло Міщенко', time: '2:38', strava: '#' },
-        { category: 'Жінки, кермо «баран»', winner: 'Марина Кизилова', time: '3:30', strava: '#' },
+      { year: 'Переможці 2024', protocol: 'https://timingevents.com/results/25179818', protocolLabel: 'Протокол 2024', rows: [
+        { category: 'Чоловіки, пряме кермо', winner: 'Юрій Кресан', time: '2:39', strava: 'https://www.strava.com/activities/12852597860' },
+        { category: 'Жінки, пряме кермо', winner: 'Наталія Ковалевська', time: '3:45', strava: 'https://www.strava.com/activities/12804364329' },
+        { category: 'Чоловіки, кермо «баран»', winner: 'Павло Міщенко', time: '2:38', strava: 'https://www.strava.com/activities/15315853196' },
+        { category: 'Жінки, кермо «баран»', winner: 'Марина Кизилова', time: '3:30', strava: 'https://www.strava.com/activities/12804703142' },
       ] },
-      { year: 'Переможці 2025', protocol: '#', protocolLabel: 'Протокол 2025', rows: [
-        { category: 'Чоловіки, пряме кермо', winner: 'Максим Тимощук', time: '2:51', strava: '#' },
-        { category: 'Жінки, пряме кермо', winner: 'Дар’я Опенько', time: '3:32', strava: '#' },
-        { category: 'Чоловіки, кермо «баран»', winner: 'Дмитро Мельников', time: '2:46', strava: '#' },
-        { category: 'Жінки, кермо «баран»', winner: 'Ірина Шіхадат', time: '4:49', strava: '#' },
+      { year: 'Переможці 2025', protocol: 'https://drive.google.com/file/d/1ZO6vvxxCnTLvbUHJbwxVb2aB_-pTWkJI/view', protocolLabel: 'Протокол 2025', rows: [
+        { category: 'Чоловіки, пряме кермо', winner: 'Максим Тимощук', time: '2:51', strava: 'https://www.strava.com/activities/15317493276' },
+        { category: 'Жінки, пряме кермо', winner: 'Дар’я Опенько', time: '3:32', strava: 'https://www.strava.com/activities/15315104828' },
+        { category: 'Чоловіки, кермо «баран»', winner: 'Дмитро Мельников', time: '2:46', strava: 'https://www.strava.com/activities/15315880154' },
+        { category: 'Жінки, кермо «баран»', winner: 'Ірина Шіхадат', time: '4:49', strava: 'https://www.strava.com/activities/15306946309' },
       ] },
     ],
     galleryHeading: 'Світлини з минулих подій',
@@ -103,9 +108,9 @@ const content = {
     ],
     finalTitle: 'Смородинський вже чекає. Справа за тобою.',
     finalSub: 'Реєстрація займає дві хвилини. Підйом — близько трьох. Гордість — значно довше.',
-    footerOrganizersPre: 'Організатор — команда', footerOrganizersLink: '«Київська Сотка»',
+    footerOrganizers: 'Організатор — команда <a href="https://www.facebook.com/velo100ka" target="_blank" rel="noopener">«Київська Сотка»</a>',
     footerFb: 'Подія на Facebook',
-    footerDisclaimer: 'Це неофіційний фан-сайт. За реєстрацію та офіційну інформацію відповідає оргкомітет Київської Сотки.',
+    footerDisclaimer: 'Це неофіційний фан-сайт, створений <a href="https://www.instagram.com/oleksandr.red/" target="_blank" rel="noopener">Олександром Редько</a>, учасником змагань. Реєстрацією та офіційною інформацією опікується організаційний комітет.',
     backToTop: 'Нагору',
   },
   en: {
@@ -156,13 +161,13 @@ const content = {
     resultsHeading: 'Times waiting to be beaten',
     resultsSub: '2024 and 2025 category winners. Someone has to take these records down. Why not you? Each winner’s name links to their Strava effort.',
     resultYears: [
-      { year: '2024 winners', protocol: '#', protocolLabel: '2024 protocol', rows: [
+      { year: '2024 winners', protocol: 'https://timingevents.com/results/25179818', protocolLabel: '2024 protocol', rows: [
         { category: 'Men, flat bar', winner: 'Yurii Kresan', time: '2:39', strava: '#' },
         { category: 'Women, flat bar', winner: 'Nataliia Kovalevska', time: '3:45', strava: '#' },
         { category: 'Men, drop bar', winner: 'Pavlo Mishchenko', time: '2:38', strava: '#' },
         { category: 'Women, drop bar', winner: 'Maryna Kyzylova', time: '3:30', strava: '#' },
       ] },
-      { year: '2025 winners', protocol: '#', protocolLabel: '2025 protocol', rows: [
+      { year: '2025 winners', protocol: 'https://drive.google.com/file/d/1ZO6vvxxCnTLvbUHJbwxVb2aB_-pTWkJI/view', protocolLabel: '2025 protocol', rows: [
         { category: 'Men, flat bar', winner: 'Maksym Tymoshchuk', time: '2:51', strava: '#' },
         { category: 'Women, flat bar', winner: 'Daria Openko', time: '3:32', strava: '#' },
         { category: 'Men, drop bar', winner: 'Dmytro Melnykov', time: '2:46', strava: '#' },
@@ -190,7 +195,7 @@ const content = {
     ],
     finalTitle: 'The hill is ready. Your move.',
     finalSub: 'Registration takes two minutes. The climb takes about three. The pride lasts much longer.',
-    footerOrganizersPre: 'Organized by the cycling community', footerOrganizersLink: '«Kyivska Sotka»',
+    footerOrganizers: 'Organized by the cycling community <a href="https://www.facebook.com/velo100ka" target="_blank" rel="noopener">«Kyivska Sotka»</a>',
     footerFb: 'Facebook event',
     footerDisclaimer: 'This is an unofficial fan site run by a participant. The organizing committee handles registration and official information.',
     backToTop: 'To the top',
@@ -282,7 +287,7 @@ function render() {
         <a href="#results">${escapeHtml(c.navRecords)}</a>
         <a href="#faq">${escapeHtml(c.navFaq)}</a>
         <div class="dropdown-rule"></div>
-        <a href="#" class="dropdown-cta">${escapeHtml(c.ctaPrimary)}</a>
+        <a href="${REGISTER_URL}" target="_blank" rel="noopener" class="dropdown-cta">${escapeHtml(c.ctaPrimary)}</a>
       </div>` : ''}
     </nav>
 
@@ -293,8 +298,8 @@ function render() {
         <div class="hero-footer-row">
           <p class="hero-sub">${escapeHtml(c.heroSub)}</p>
           <div class="cta-row">
-            <a href="#" class="btn-primary">${escapeHtml(c.ctaPrimary)}</a>
-            <a href="#" class="btn-secondary">${escapeHtml(c.ctaSecondary)}</a>
+            <a href="${REGISTER_URL}" target="_blank" rel="noopener" class="btn-primary">${escapeHtml(c.ctaPrimary)}</a>
+            <a href="${RULES_URL}" target="_blank" rel="noopener" class="btn-secondary">${escapeHtml(c.ctaSecondary)}</a>
           </div>
         </div>
       </div>
@@ -334,8 +339,8 @@ function render() {
         </div>
         <div class="gallery-years">
           <span class="years-label">${escapeHtml(c.galleryCta)}</span>
-          <a href="#" class="year-link">2024 →</a>
-          <a href="#" class="year-link">2025 →</a>
+          <a href="${PHOTOS_2024_URL}" target="_blank" rel="noopener" class="year-link">2024 →</a>
+          <a href="${PHOTOS_2025_URL}" target="_blank" rel="noopener" class="year-link">2025 →</a>
         </div>
       </section>
 
@@ -388,7 +393,7 @@ function render() {
             <p class="timer-note">${escapeHtml(tm.note)}</p>
           </div>`).join('')}
         </div>
-        <a href="#" class="countdown-cta">${escapeHtml(c.ctaPrimary)}</a>
+        <a href="${REGISTER_URL}" target="_blank" rel="noopener" class="countdown-cta">${escapeHtml(c.ctaPrimary)}</a>
       </div>
     </section>
 
@@ -450,7 +455,7 @@ function render() {
       <div class="final-inner">
         <h2 class="final-title">${escapeHtml(c.finalTitle)}</h2>
         <p class="final-sub">${escapeHtml(c.finalSub)}</p>
-        <a href="#" class="final-cta">${escapeHtml(c.ctaPrimary)}</a>
+        <a href="${REGISTER_URL}" target="_blank" rel="noopener" class="final-cta">${escapeHtml(c.ctaPrimary)}</a>
       </div>
     </section>
 
@@ -473,10 +478,10 @@ function render() {
       <div class="footer-inner">
         <div class="footer-brand-col">
           <p class="footer-brand">${escapeHtml(c.brand)}</p>
-          <p class="footer-organizers">${escapeHtml(c.footerOrganizersPre)} <a href="https://www.facebook.com/velo100ka" target="_blank" rel="noopener">${escapeHtml(c.footerOrganizersLink)}</a></p>
-          <p class="footer-disclaimer">${escapeHtml(c.footerDisclaimer)}</p>
+          <p class="footer-organizers">${c.footerOrganizers}</p>
+          <p class="footer-disclaimer">${c.footerDisclaimer}</p>
         </div>
-        <a href="#" class="footer-fb">${escapeHtml(c.footerFb)} →</a>
+        <a href="https://www.facebook.com/events/1374282914840076/" target="_blank" rel="noopener" class="footer-fb">${escapeHtml(c.footerFb)} →</a>
       </div>
     </footer>
   `;
