@@ -516,7 +516,14 @@ function render() {
   `;
 
   mountRouteMap();
+  updateBackToTop();
 }
+
+function updateBackToTop() {
+  const btn = document.querySelector('.back-to-top');
+  if (btn) btn.classList.toggle('visible', window.scrollY > window.innerHeight);
+}
+window.addEventListener('scroll', updateBackToTop, { passive: true });
 
 let routeMapMounted = false;
 function mountRouteMap() {

@@ -278,7 +278,9 @@ a:hover { color: var(--ink); }
   display: inline-flex; align-items: center; font-family: 'Unbounded', sans-serif; font-weight: 600;
   font-size: 13px; text-transform: uppercase; color: var(--bg); background: var(--ink);
   border: 3px solid var(--ink); padding: 13px 20px; text-decoration: none; box-shadow: 4px 4px 0 var(--accent);
+  opacity: 0; pointer-events: none; transition: opacity 0.2s ease;
 }
+.back-to-top.visible { opacity: 1; pointer-events: auto; }
 .back-to-top:hover { color: var(--bg); }
 
 /* phones: pull corner-pinned captions into normal flow so they can't overlap */
