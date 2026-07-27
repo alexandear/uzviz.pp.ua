@@ -188,7 +188,7 @@ a:hover { color: var(--ink); }
 
 /* results */
 .results-section { padding: 0 0 clamp(44px, 6vw, 72px); }
-.results-years-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: clamp(24px, 4vw, 48px); }
+.results-years-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: clamp(24px, 4vw, 48px); }
 .results-year-heading { font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(18px, 2.2vw, 24px); margin: 0 0 14px; }
 .results-item { display: flex; flex-wrap: wrap; gap: 6px 20px; justify-content: space-between; padding: 13px 0; border-top: 2px solid var(--ink); align-items: baseline; }
 .results-category { font-size: 14.5px; color: var(--muted); flex: 1 1 150px; }
@@ -232,7 +232,7 @@ a:hover { color: var(--ink); }
 
 /* voices */
 .voices-section { padding: 0 0 clamp(44px, 6vw, 72px); }
-.voices-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(16px, 2.5vw, 28px); }
+.voices-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: clamp(16px, 2.5vw, 28px); }
 .voice-card { margin: 0; border: 3px solid var(--ink); background: #F8F4EA; padding: clamp(20px, 3vw, 28px); display: flex; flex-direction: column; gap: 18px; box-shadow: 6px 6px 0 var(--accent); }
 .voice-quote { margin: 0; font-size: clamp(16px, 1.9vw, 18.5px); line-height: 1.55; }
 .voice-caption { margin-top: auto; display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; }
@@ -280,3 +280,11 @@ a:hover { color: var(--ink); }
   border: 3px solid var(--ink); padding: 13px 20px; text-decoration: none; box-shadow: 4px 4px 0 var(--accent);
 }
 .back-to-top:hover { color: var(--bg); }
+
+/* phones: pull corner-pinned captions into normal flow so they can't overlap */
+@media (max-width: 480px) {
+  .hero-media { display: flex; flex-direction: column; }
+  .stamp, .photo-credit { position: static; align-self: flex-start; }
+  .photo-credit { margin-top: -3px; }
+  .lightbox-date, .lightbox-credit { position: static; }
+}
