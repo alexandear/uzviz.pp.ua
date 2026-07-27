@@ -35,7 +35,7 @@ const content = {
     heroStamp: 'Смородинський узвіз · Татарка',
     photoCredit: 'Фото: sportmoments.photo',
     routeHeading: 'Strava',
-    linkRoute: 'Google Maps', linkStart: 'Місце старту', linkFinish: 'Місце фінішу',
+    linkStart: 'Старт', linkRoute: 'Узвіз', linkFinish: 'Фініш',
     factsHeading: 'Траса в ЧИСЛАХ',
     factsRaw: [
       { value: '880 м', label: 'Довжина траси' },
@@ -128,7 +128,7 @@ const content = {
     heroStamp: 'Smorodynskyi Uzviz · Tatarka',
     photoCredit: 'Photo: sportmoments.photo',
     routeHeading: 'Strava',
-    linkRoute: 'Google Maps', linkStart: 'Start location', linkFinish: 'Finish location',
+    linkStart: 'Start', linkRoute: 'Uzviz', linkFinish: 'Finish',
     factsHeading: 'The course in numbers',
     factsRaw: [
       { value: '880 m', label: 'Course length' },
@@ -354,8 +354,8 @@ function render() {
       <section class="route-section">
         <div id="hv-route-map"></div>
         <div class="route-links">
-          <a href="https://maps.app.goo.gl/BRLo8xGGdRsKHYse8" target="_blank" rel="noopener" class="route-link">${escapeHtml(c.linkRoute)} ↗</a>
           <a href="https://maps.app.goo.gl/nxpHzWWnkN71EqMx8" target="_blank" rel="noopener" class="route-link">${escapeHtml(c.linkStart)} ↗</a>
+          <a href="https://maps.app.goo.gl/BRLo8xGGdRsKHYse8" target="_blank" rel="noopener" class="route-link">${escapeHtml(c.linkRoute)} ↗</a>
           <a href="https://maps.app.goo.gl/Fev8zkjKWhLST3y66" target="_blank" rel="noopener" class="route-link">${escapeHtml(c.linkFinish)} ↗</a>
         </div>
       </section>
