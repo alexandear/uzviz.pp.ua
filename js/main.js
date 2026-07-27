@@ -3,110 +3,129 @@
 const RACE_DATE = new Date('2026-08-01T09:01:00+03:00').getTime();
 const REG_DATE = new Date('2026-07-30T18:00:00+03:00').getTime();
 
+const HERO_IMAGE = 'assets/2024-hero-cobblestone-climb.jpg';
+const GALLERY_IMAGES = [
+  'assets/2024-gallery-climb-group.jpg',
+  'assets/DSC04645.jpg',
+  'assets/DSC04690.jpg',
+  'assets/DSC04796.jpg',
+  'assets/DSC04848.jpg',
+  'assets/DSC05205.jpg',
+  'assets/DSC05247.jpg',
+  'assets/DSC05337.jpg',
+  'assets/DSC05511.jpg',
+];
+
 const content = {
   ua: {
-    badge: 'Неофіційний фан-сайт учасника — реєстрація на Timing Events',
     brand: 'Гори Вище',
-    navHome: 'Головна', navArchive: 'Архів', navRecords: 'Рекорди', navFaq: 'FAQ',
+    navHome: 'Головна', navRoute: 'Маршрут', navArchive: 'Світлини', navVoices: 'Відгуки', navStory: 'Історія', navSchedule: 'План дня', navRecords: 'Результати', navFaq: 'FAQ',
     ctaPrimary: 'Зареєструватись', ctaSecondary: 'Положення',
     heroKicker: 'Аматорський вело-підйом · Київ · 1 серпня 2026',
     heroTitle: 'Три хвилини болю. Рік гордості.',
-    heroSub: 'Спринт вгору «Гори Вище»: 730 метрів бруківки Смородинського узвозу, дві спроби і фінал на нервах. Тобі не треба бути PRO — треба лише наважитись приїхати.',
+    heroSub: 'Спринт вгору «Гори Вище»: 880 метрів Смородинського узвозу, бруківка, дві спроби і фінал на нервах. Тобі не треба бути PRO — треба лиш наважитись приїхати.',
     heroStamp: 'Смородинський узвіз · Татарка',
-    profileHeading: 'Профіль висоти',
-    routeHeading: 'Маршрут',
-    linkRoute: 'Маршрут у Google Maps', linkStart: 'Місце старту', linkFinish: 'Місце фінішу',
-    tickerParts: ['ДО СТАРТУ', '730 М ВГОРУ', '68% БРУКІВКИ', 'РЕКОРД 2:41 — ПОБ’ЄШ?', 'ВНЕСКИ — НА ПІДРОЗДІЛ НАШОГО ВЕЛОДРУГА', 'РЕЄСТРАЦІЯ ДО 30.07, 18:00'],
+    photoCredit: 'Фото: sportmoments.photo',
+    routeHeading: 'Strava',
+    linkRoute: 'Google Maps', linkStart: 'Місце старту', linkFinish: 'Місце фінішу',
     factsHeading: 'Траса в ЧИСЛАХ',
     factsRaw: [
-      { value: '730 м', label: 'Довжина траси' },
-      { value: '62 м', label: 'Набір висоти' },
+      { value: '880 м', label: 'Довжина траси' },
+      { value: '77 м', label: 'Набір висоти' },
       { value: '68%', label: 'Історична бруківка' },
-      { value: '2:41', label: 'Рекорд траси, 2025' },
+      { value: '9,3%', label: 'Середній градієнт' },
+      { value: '2:38', label: 'Рекорд траси (чоловіки), 2024' },
+      { value: '3:30', label: 'Рекорд траси (жінки), 2024' },
     ],
     whyHeading: 'Чому ти маєш стартувати',
     why: [
-      'Три хвилини болю — і дванадцять місяців права казати «я це зробив».',
-      'Стартувати можна на будь-якому велосипеді. Категорій дві — за типом керма: «баран» (шосе, гравійники) та прямий руль (МТБ, двопідвіси тощо).',
-      'Формат на вибування: програєш двічі — і все одно можеш доїхати до фіналу. Тут другий шанс вбудований у правила.',
-      'Гандикап 20 секунд: навіть якщо ти повільніший, суперник стартує позаду. Наздоженуть — але хай спробують.',
-      'Бруківці понад сто років. Твій час на ній залишиться в протоколі назавжди.',
       'Кошти від реєстрації підуть на потреби підрозділу нашого велодруга Олександра Царевського — твій піт працює двічі.',
+      'Перевірити свої сили - скільки максимум ватів видаєш на підйомі.',
+      'Бруківці понад сто років. Твій час на ній залишиться в протоколі назавжди.',
+      'Можливість побувати на історичному узвозі, насолодитися красою ландшафтного парку "Смородинський" та побачити Смородинську печеру, якій 5 тисяч років.',
+      'Три хвилини болю — і дванадцять місяців права казати «я це зробив».',
+      'Унікальний формат гонки в Києві — таких подій більше немає в столиці.',
+      'Доторкнутись до Туру Фландрії - легендарної гонки, якою надихались організатори "Гори Вище".',
     ],
-    storyHeading: 'Чому саме Смородинський',
-    storyLeft: [
-      'Майже в кожного велосипедиста є «улюблений» підйом — той, що ми залежно від довжини й градієнта звемо «тягуном» чи «торчком». У багатьох містах України райдери завзято долають власні «Коппенберги» та «Муури».',
-      'Київ і область спокійно можуть позмагатися з бельгійською Фландрією за кількістю викличних стрімких апхілів. Численні узвози, що єднають Поділ і Куренівку з «верхнім містом», — ідеальні локації, щоб набути гірських скілів. Ну і всі ми «любимо» прекрасний «Космос» неподалік Рославичів.',
-      'Один із найцікавіших, найколоритніших і овіяних легендами — Смородинський узвіз.',
-    ],
-    storyRight: [
-      'Приблизно у 2020-му Станіслав Клименко запропонував уважніше придивитися до Смородинського як до місця викличних велозмагань. У 2021-му відбувся «пробний» старт на закриття сезону — атмосферно все пройшло.',
-      'Тепер ми знову проводимо спринт вгору — уже на відремонтованому узвозі.',
-      'Амбітні райдери позмагаються, менш підготовлені просто насолодяться красою ландшафтного парку і впишуть знакову сторінку у власну велоісторію.',
-    ],
-    storyKicker: 'Let’s climb it up 🤘',
+    storyHeading: 'Чому гонка саме на Смородинському',
+    storyBody: '<p><a href="https://uk.wikipedia.org/wiki/%D0%A1%D0%BC%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%83%D0%B7%D0%B2%D1%96%D0%B7" target="_blank" rel="noopener">Смородинський узвіз</a> — найдовший підйом Києва з бруківкою. Це старовинна вулиця у Шевченківському районі, місцевість Куренівка: пролягає від Нагірної до Кирилівської. До середини XX століття узвіз був забудований, тепер проходить через регіональний ландшафтний парк «Смородинський».</p><p>На схилах яру ховаються входи до <a href="https://uk.wikipedia.org/wiki/%D0%A1%D0%BC%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B0_%D0%BF%D0%B5%D1%87%D0%B5%D1%80%D0%B0" target="_blank" rel="noopener">Смородинської печери</a> — комплексу з майже двадцяти підземних споруд віком 4–3 тисячоліття до н. е. З печерою пов’язана легенда про двобій Добрині Микитича зі Змієм, тому її ще називають Змієвою печерою. У 1941–1943 роках вона слугувала схованкою для підпільників, які боролися проти німецької окупації. Сьогодні це офіційна археологічна пам’ятка України.</p><p>У 2021-му замість повноцінної гонки "Узвіз" <a href="https://www.facebook.com/media/set/?vanity=bikeincity&set=a.1955120627994450" target="_blank" rel="noopener">відбувся</a> лише «пробний» заїзд — через карантинні обмеження COVID-19.</p><p>Але вже <a href="https://www.facebook.com/events/1686152935573625/" target="blank" rel="noopener">у 2024 році</a> ідею змагань відновили й провели її на відремонтованому узвозі за участі близько 70 спортсменів. Попри шахеди, холод та тривоги, вона пройшла успішно, зібрані кошти з якої пішли для бійців загону ударних БпЛА «Злі Птахи».</p><p>У 2025-му <a href="https://www.facebook.com/events/1095082119158596/" target="blank" rel="noopener">«Гори Вище»</a> перенесли з осені на кінець літа — перед «Київською Соткою». У змаганнях взяли участь 50 райдерів у різних категоріях.</p><p>Тепер, у <a href="https://www.facebook.com/events/1374282914840076" target="_blank" rel="noopener">2026 році</a>, ми знову проводимо спринт вгору. Амбітні велоспортсмени позмагаються, а менш підготовлені — просто насолодяться красою ландшафтного парку й впишуть знакову сторінку у власну велоісторію.</p>',
     regLabel: 'Кінець реєстрації за', regNote: 'Реєстрація відкрита до 30 липня, 18:00',
     countdownLabel: 'До старту', countdownNote: 'Старт: 1 серпня, 09:00',
     cdHoursLabel: 'годин', cdMinsLabel: 'хвилин',
     scheduleHeading: 'План дня',
     schedule: [
-      { time: '09:00', event: 'Реєстрація і видача номерів' },
-      { time: '10:00', event: 'Перша спроба (кваліфікація)' },
-      { time: '12:00', event: 'Друга спроба (кваліфікація)' },
-      { time: '14:00', event: 'Півфінали (пари)' },
-      { time: '15:30', event: 'Фінал' },
-      { time: '16:30', event: 'Нагородження' },
+      { time: '08:00', event: 'Збір учасників біля місця старту, довидача стартових пакетів' },
+      { time: '08:45', event: 'Відкриття змагань' },
+      { time: '09:00', event: 'Хвилина мовчання' },
+      { time: '09:02', event: 'Старт першої спроби' },
+      { time: '09:30', event: 'Старт другої спроби' },
+      { time: '10:00', event: 'Півфінал' },
+      { time: '10:15', event: 'Фінал' },
+      { time: '11:00', event: 'Нагородження переможців' },
+      { time: '11:30', event: 'Культурна програма, присвячена історії Києва та Татарки зокрема' },
     ],
     resultsHeading: 'РЕКОРДИ, які чекають, щоб їх побили',
-    resultsSub: 'Переможці 2025 року. Хтось має зняти ці рекорди. Чому не ти?',
-    results: [
-      { category: 'Чоловіки, пряме кермо', winner: 'Юрій Коваль', time: '2:41' },
-      { category: 'Жінки, пряме кермо', winner: 'Олена Бондар', time: '3:05' },
-      { category: 'Чоловіки, «баран»', winner: 'Максим Ткач', time: '2:52' },
-      { category: 'Жінки, «баран»', winner: 'Марія Гриценко', time: '3:14' },
+    resultsSub: 'Переможці 2024 і 2025 років. Хтось має зняти ці рекорди. Чому не ти?',
+    resultYears: [
+      { year: 'Переможці 2024', protocol: '#', protocolLabel: 'Протокол 2024', rows: [
+        { category: 'Чоловіки, пряме кермо', winner: 'Юрій Кресан', time: '2:39', strava: '#' },
+        { category: 'Жінки, пряме кермо', winner: 'Наталія Ковалевська', time: '3:45', strava: '#' },
+        { category: 'Чоловіки, кермо «баран»', winner: 'Павло Міщенко', time: '2:38', strava: '#' },
+        { category: 'Жінки, кермо «баран»', winner: 'Марина Кизилова', time: '3:30', strava: '#' },
+      ] },
+      { year: 'Переможці 2025', protocol: '#', protocolLabel: 'Протокол 2025', rows: [
+        { category: 'Чоловіки, пряме кермо', winner: 'Максим Тимощук', time: '2:51', strava: '#' },
+        { category: 'Жінки, пряме кермо', winner: 'Дар’я Опенько', time: '3:32', strava: '#' },
+        { category: 'Чоловіки, кермо «баран»', winner: 'Дмитро Мельников', time: '2:46', strava: '#' },
+        { category: 'Жінки, кермо «баран»', winner: 'Ірина Шіхадат', time: '4:49', strava: '#' },
+      ] },
     ],
-    resultsCta: 'Усі результати та рекорди',
-    galleryHeading: 'З архіву',
-    gallerySub: 'Два сезони — 2024 і 2025: бруківка, падіння і фініші. Наступне фото може бути твоїм.',
-    galleryCta: 'Дивитись архів',
-    voicesHeading: 'Що кажуть учасники',
+    galleryHeading: 'Світлини з минулих подій',
+    gallerySub: 'Два сезони — 2024 і 2025: бруківка, насолода, страждання, фініші з останніх сил. Наступне фото може бути твоїм.',
+    galleryCta: 'Фото за рік:',
+    voicesHeading: 'Що кажуть учасники та учасниці',
     voices: [
-      { quote: 'Крутий досвід. Напружена боротьба. І важливе нагадування: іноді можна витягнути гонку на характері 💥', name: 'Володимир Валько', handle: '@cosy.rider', link: 'https://www.instagram.com/p/DNGHIeFNQ2f/' },
-      { quote: 'Найкоротше і найшвидше змагання, яке я їхала 🤣 Майже кілометр угору чистого задоволення по відбірній бруківці з гарними поворотами — і вино з музикою на фініші, кава з печивом на старті ✨', name: 'Дар’я Опенько', handle: '@ultiis', link: 'https://www.instagram.com/p/DNTD14Hsdju/' },
-      { quote: 'Формат крутий: треба максимально швидко заїхати на Смородинський узвіз, де більша частина — бруківка різних розмірів. Усі радили їхати на МТБ, але я був упевнений у своєму велосипеді — прикатував і зрозумів, що з правильним тиском усе їдеться добре.', name: 'Олексій Морозов', handle: '@dedmoroz235', link: 'https://www.instagram.com/p/DCRHm-GtER_/' },
+      { quote: '🏁 Як для мене пройшла гонка "Гори Вище".\n Кваліфікація вийшла слабкою: не відчував ні сили в ногах, ні дихання - захекався, ще й пекло горло. Приїхав другим. У фіналі залишився з суперником до кінця і вдало спринтонув на фініші, що принесло перемогу.\nКрутий досвід. Напружена боротьба. Іноді можна витягнути гонку на характері 💥', name: 'Володимир Валько', bike: 'Гравійник', handle: '@cosy.rider', link: 'https://www.instagram.com/p/DNGHIeFNQ2f/' },
+      { quote: 'Найкоротше і найшвидше змагання, яке я їхала 🤣 Майже кілометр угору чистого задоволення по відбірній бруківці з гарними поворотами — і вино з музикою на фініші, кава з печивом на старті ✨', name: 'Дар’я Опенько', bike: 'МТБ', handle: '@ultiis', link: 'https://www.instagram.com/p/DNTD14Hsdju/' },
+      { quote: 'Формат крутий: треба максимально швидко заїхати на Смородинський узвіз, де більша частина — бруківка різних розмірів. Усі радили їхати на МТБ, але я був упевнений у своєму велосипеді — прикатував і зрозумів, що з правильним тиском усе їдеться добре.', name: 'Олексій Морозов', bike: 'Шосе', handle: '@dedmoroz235', link: 'https://www.instagram.com/p/DCRHm-GtER_/' },
+      { quote: 'Було надзвичайно душевно. "Київська Сотка" великі молодці, що змогли провести захід у перервах між повітряними тривогами.\nГарно поспілкувався з учасниками, напився кави від "Лайби",  посів третє місце.\nЗмагання "ГориВище 2024" дуже сподобались.', name: 'Олександр Редько', bike: 'Гравійник', handle: '@oleksandr.red', link: 'https://instagram.com/oleksandr.red' },
+      { quote: 'Завдяки велоподії вперше побувала на Смородинському узвозі. Через тривоги від шахедів сусідньої недодержави чекати заїздів прийшлося довго, тож дослідила пагорби та печеру змія. Змія давно немає, бо на мерзенну тварюку знайдеться Кожум\'яка або "Злі Птахи" зведеного загону ударних БпЛА, на підтримку яких організована подія.', name: 'Світлана Юсипенко', bike: 'Глядачка', handle: '@svitlana.usipenko', link: 'https://www.facebook.com/svitlana.usipenko/posts/pfbid02qBjJUW2tc6KWLdu4gemsQhdninzELz1zss3w8U44hLwLMvz1N1wRbNA2AEVGbjNvl' },
     ],
     faqHeading: 'Питання, які нам пишуть',
     faqRaw: [
       { q: 'Я ніколи не брав участі в гонках. Мені точно сюди?', a: 'Так. Половина учасників — новачки. Формат із гандикапом і другим шансом придуманий саме для тебе.' },
       { q: 'Який велосипед підійде?', a: 'Будь-який. Категорій дві — за типом керма: «баран» (шосе, гравійники) та прямий руль (МТБ, двопідвіси тощо).' },
       { q: 'Куди йдуть внески?', a: 'Кошти від реєстрації передамо на потреби підрозділу нашого велодруга — Олександра Царевського.', link: 'https://www.facebook.com/tsarevskiy', linkLabel: 'Олександр Царевський у Facebook' },
-      { q: 'Що як дощ?', a: 'Бруківка стає підступнішою, а не гонку скасовують.' },
+      { q: 'Чи є знижки для військових?', a: 'Так — 50% від ціни стартового внеску.' },
+      { q: 'Чи треба мати страховку?', a: 'Ні, не обов’язково.' },
+      { q: 'Що як дощ?', a: 'Бруківка стає підступнішою, але гонку не скасовують.' },
+      { q: 'Який алгоритм дій в повітряну тривогу?', a: 'Прямуємо в укриття. Змагання продовжаться після відбою тривоги.' },
     ],
     finalTitle: 'Смородинський вже чекає. Справа за тобою.',
     finalSub: 'Реєстрація займає дві хвилини. Підйом — близько трьох. Гордість — значно довше.',
     footerOrganizersPre: 'Організатор — команда', footerOrganizersLink: '«Київська Сотка»',
     footerFb: 'Подія на Facebook',
     footerDisclaimer: 'Це неофіційний фан-сайт. За реєстрацію та офіційну інформацію відповідає оргкомітет Київської Сотки.',
+    backToTop: 'Нагору',
   },
   en: {
-    badge: 'Unofficial fan site — registration on Timing Events',
     brand: 'Hory Vyshche',
-    navHome: 'Home', navArchive: 'Archive', navRecords: 'Records', navFaq: 'FAQ',
+    navHome: 'Home', navRoute: 'Route', navArchive: 'Photos', navVoices: 'Riders', navStory: 'Story', navSchedule: 'Schedule', navRecords: 'Results', navFaq: 'FAQ',
     ctaPrimary: 'Register', ctaSecondary: 'Rules',
     heroKicker: 'Amateur bike climb · Kyiv · August 1, 2026',
     heroTitle: 'Three minutes of pain. A year of pride.',
     heroSub: 'Sprynt Vhoru «Hory Vyshche»: 730 meters of Smorodynskyi Uzviz cobblestone, a 20-second handicap, and a nail-biting final. You don’t need to be a pro — just press the button.',
     heroStamp: 'Smorodynskyi Uzviz · Tatarka',
-    profileHeading: 'Elevation profile',
-    routeHeading: 'The route',
-    linkRoute: 'Route on Google Maps', linkStart: 'Start location', linkFinish: 'Finish location',
-    tickerParts: ['TO THE START', '730 M UPHILL', '68% COBBLESTONE', 'RECORD 2:41 — BEAT IT?', 'FEES GO TO A FRIEND’S ARMY UNIT', 'REGISTRATION CLOSES JULY 30, 18:00'],
+    photoCredit: 'Photo: sportmoments.photo',
+    routeHeading: 'Strava',
+    linkRoute: 'Google Maps', linkStart: 'Start location', linkFinish: 'Finish location',
     factsHeading: 'The course in numbers',
     factsRaw: [
       { value: '730 m', label: 'Course length' },
       { value: '62 m', label: 'Elevation gain' },
       { value: '68%', label: 'Historic cobblestone' },
-      { value: '2:41', label: 'Course record, 2025' },
+      { value: '9.3%', label: 'Average gradient' },
+      { value: '2:38', label: 'Course record, 2024' },
     ],
     whyHeading: 'Why you should be on the start line',
     why: [
@@ -118,52 +137,55 @@ const content = {
       'Registration fees go to the army unit of our cycling friend Oleksandr Tsarevskyi — your sweat works twice.',
     ],
     storyHeading: 'Why Smorodynskyi',
-    storyLeft: [
-      'Almost every cyclist has a “favourite” climb — the one we call a grinder or a wall depending on its length and gradient. In cities across Ukraine riders doggedly take on their own Koppenbergs and Muurs.',
-      'Kyiv and its region can easily rival Belgian Flanders for the sheer number of steep, punishing uphills. The uzvozy linking Podil and Kurenivka to the “upper city” are perfect places to build climbing skills. And of course we all “love” the glorious Kosmos near Roslavychi.',
-      'One of the most interesting, characterful and legend-soaked of them all is Smorodynskyi Uzviz.',
-    ],
-    storyRight: [
-      'Around 2020, Stanislav Klymenko suggested taking a closer look at Smorodynskyi as a venue for a proper challenge race. In 2021 we ran a trial start to close the season — the atmosphere was superb.',
-      'Now we’re running the uphill sprint again, this time on the resurfaced climb.',
-      'Ambitious riders will race; less-prepared ones will simply enjoy (with a certain amount of effort) the beauty of the landscape park and write a landmark page into their own cycling history. Original souvenirs and a warm welcome at the finish — warm in every sense — will make the day unforgettable.',
-    ],
-    storyKicker: 'Let’s climb it up 🤘',
+    storyBody: '<p>Smorodynskyi Uzviz is Kyiv’s longest cobblestone climb. It’s a historic street in the Shevchenkivskyi district, in Kurenivka, running from Nahirna to Kyrylivska. Built up until the mid-20th century, it now runs through the Smorodynskyi regional landscape park.</p><p>The slopes of the Smorodynskyi ravine, right by the climb itself, hide the entrances to the Smorodynska Cave — a complex of nearly twenty underground chambers dating back to the Neolithic, around the 4th–3rd millennium BCE. A legend about Dobrynia Nikitich’s duel with the Dragon is tied to the cave, giving it its alternate name, the Dragon’s Cave. In 1941–1943 it served as a hideout for an underground resistance group fighting the German occupation. Today it’s an officially recognized archaeological monument of Ukraine, studied since 1998 by researchers from the Kyiv History Museum.</p><p>Around 2020, Stanislav Klymenko suggested taking a closer look at Smorodynskyi as a venue for a proper challenge race. In 2021 we <a href="https://www.facebook.com/media/set/?vanity=bikeincity&set=a.1955120627994450" target="_blank" rel="noopener">ran a trial start</a> to close the season — the atmosphere was superb.</p><p>Now we’re running the uphill sprint again, this time on the resurfaced climb.</p><p>Ambitious riders will race; less-prepared ones will simply enjoy (with a certain amount of effort) the beauty of the landscape park and write a landmark page into their own cycling history.</p>',
     regLabel: 'Registration closes in', regNote: 'Registration open until July 30, 18:00',
     countdownLabel: 'To the start', countdownNote: 'Start: August 1, 09:00',
     cdHoursLabel: 'hours', cdMinsLabel: 'minutes',
     scheduleHeading: 'Race-day schedule',
     schedule: [
-      { time: '09:00', event: 'Check-in & bib pickup' },
-      { time: '10:00', event: 'First run (qualifying)' },
-      { time: '12:00', event: 'Second run' },
-      { time: '14:00', event: 'Semifinals (heats)' },
-      { time: '15:30', event: 'Final' },
-      { time: '16:30', event: 'Awards' },
+      { time: '08:00', event: 'Riders gather near the start' },
+      { time: '08:45', event: 'Opening ceremony' },
+      { time: '09:00', event: 'A minute of silence' },
+      { time: '09:02', event: 'First run' },
+      { time: '09:30', event: 'Second run' },
+      { time: '10:00', event: 'Semifinal' },
+      { time: '10:15', event: 'Final' },
+      { time: '11:00', event: 'Awards' },
+      { time: '11:30', event: 'Cultural programme on the history of Kyiv and Tatarka' },
     ],
     resultsHeading: 'Times waiting to be beaten',
-    resultsSub: '2025 category winners. Someone has to take these records down. Why not you?',
-    results: [
-      { category: 'Men, drop bar', winner: 'Yurii Koval', time: '2:41' },
-      { category: 'Women, drop bar', winner: 'Olena Bondar', time: '3:05' },
-      { category: 'Men, flat bar', winner: 'Maksym Tkach', time: '2:52' },
-      { category: 'Women, flat bar', winner: 'Mariia Hrytsenko', time: '3:14' },
+    resultsSub: '2024 and 2025 category winners. Someone has to take these records down. Why not you? Each winner’s name links to their Strava effort.',
+    resultYears: [
+      { year: '2024 winners', protocol: '#', protocolLabel: '2024 protocol', rows: [
+        { category: 'Men, flat bar', winner: 'Yurii Kresan', time: '2:39', strava: '#' },
+        { category: 'Women, flat bar', winner: 'Nataliia Kovalevska', time: '3:45', strava: '#' },
+        { category: 'Men, drop bar', winner: 'Pavlo Mishchenko', time: '2:38', strava: '#' },
+        { category: 'Women, drop bar', winner: 'Maryna Kyzylova', time: '3:30', strava: '#' },
+      ] },
+      { year: '2025 winners', protocol: '#', protocolLabel: '2025 protocol', rows: [
+        { category: 'Men, flat bar', winner: 'Maksym Tymoshchuk', time: '2:51', strava: '#' },
+        { category: 'Women, flat bar', winner: 'Daria Openko', time: '3:32', strava: '#' },
+        { category: 'Men, drop bar', winner: 'Dmytro Melnykov', time: '2:46', strava: '#' },
+        { category: 'Women, drop bar', winner: 'Iryna Shikhadat', time: '4:49', strava: '#' },
+      ] },
     ],
-    resultsCta: 'All results & records',
     galleryHeading: 'From the archive',
     gallerySub: 'Two seasons — 2024 and 2025: cobblestone, crashes and finish lines. The next photo could be yours.',
-    galleryCta: 'Browse the archive',
+    galleryCta: 'Photos by year:',
     voicesHeading: 'What riders say',
     voices: [
-      { quote: 'A great experience. A tense fight. And an important reminder: sometimes you can pull a race out on sheer character 💥', name: 'Volodymyr Valko', handle: '@cosy.rider', link: 'https://www.instagram.com/p/DNGHIeFNQ2f/' },
-      { quote: 'The shortest and fastest race I’ve ever ridden 🤣 Almost a kilometre uphill of pure pleasure on choice cobblestone with lovely corners — wine and music at the finish, coffee and cookies at the start ✨', name: 'Daria Openko', handle: '@ultiis', link: 'https://www.instagram.com/p/DNTD14Hsdju/' },
-      { quote: 'Great format: get up Smorodynskyi Uzviz as fast as you can, most of it cobblestone of all shapes and sizes. Everyone told me to ride an MTB, but I trusted my bike — did a recon and realised that with the right tyre pressure it all rolls just fine.', name: 'Oleksii Morozov', handle: '@dedmoroz235', link: 'https://www.instagram.com/p/DCRHm-GtER_/' },
+      { quote: 'A great experience. A tense fight. And an important reminder: sometimes you can pull a race out on sheer character 💥', name: 'Volodymyr Valko', bike: 'Gravel', handle: '@cosy.rider', link: 'https://www.instagram.com/p/DNGHIeFNQ2f/' },
+      { quote: 'The shortest and fastest race I’ve ever ridden 🤣 Almost a kilometre uphill of pure pleasure on choice cobblestone with lovely corners — wine and music at the finish, coffee and cookies at the start ✨', name: 'Daria Openko', bike: 'MTB', handle: '@ultiis', link: 'https://www.instagram.com/p/DNTD14Hsdju/' },
+      { quote: 'Great format: get up Smorodynskyi Uzviz as fast as you can, most of it cobblestone of all shapes and sizes. Everyone told me to ride an MTB, but I trusted my bike — did a recon and realised that with the right tyre pressure it all rolls just fine.', name: 'Oleksii Morozov', bike: 'Road', handle: '@dedmoroz235', link: 'https://www.instagram.com/p/DCRHm-GtER_/' },
+      { quote: 'It was cold but incredibly warm-hearted. Huge respect to Kyivska Velosotka for pulling off an event like this between air-raid alerts. At the start, Laiba served excellent filter coffee — I drank my fill. Had great conversations with other riders while we waited for the qualifying results.', name: 'Oleksandr Redko', bike: 'Gravel', handle: '@oleksandr.red', link: 'https://instagram.com/oleksandr.red' },
     ],
     faqHeading: 'Questions we get asked',
     faqRaw: [
       { q: 'I’ve never raced. Is this really for me?', a: 'Yes. Half the field are first-timers. The handicap and second-chance format exist exactly for you.' },
       { q: 'What bike works?', a: 'Any bike. Two categories, split by handlebar: drop bar (road, gravel) and flat bar (MTB, full-suspension and the rest).' },
       { q: 'Where do entry fees go?', a: 'Registration fees go to the army unit of our cycling friend, Oleksandr Tsarevskyi.', link: 'https://www.facebook.com/tsarevskiy', linkLabel: 'Oleksandr Tsarevskyi on Facebook' },
+      { q: 'Is there a discount for military personnel?', a: 'Yes — 50% off the entry fee.' },
+      { q: 'Do I need insurance?', a: 'No, it’s not required.' },
       { q: 'What if it rains?', a: 'The cobblestone gets trickier — the race doesn’t get cancelled.' },
     ],
     finalTitle: 'The hill is ready. Your move.',
@@ -171,20 +193,20 @@ const content = {
     footerOrganizersPre: 'Organized by the cycling community', footerOrganizersLink: '«Kyivska Sotka»',
     footerFb: 'Facebook event',
     footerDisclaimer: 'This is an unofficial fan site run by a participant. The organizing committee handles registration and official information.',
+    backToTop: 'To the top',
   },
 };
 
-const FACT_CELLS = [
-  { bg: '#F4EFE4', fg: '#17130E', sub: '#5B5648' },
-  { bg: '#F4EFE4', fg: '#17130E', sub: '#5B5648' },
-  { bg: '#F4EFE4', fg: '#17130E', sub: '#5B5648' },
-  { bg: '#E23A00', fg: '#F4EFE4', sub: '#FBEBDD' },
-];
+const FACT_CELL_DEFAULT = { bg: '#F4EFE4', fg: '#17130E', sub: '#5B5648' };
+const FACT_CELL_HIGHLIGHT = { bg: '#E23A00', fg: '#F4EFE4', sub: '#FBEBDD' };
+
+const PHOTO_DATE = { ua: '2 лис 2025', en: '2 Nov 2025' };
 
 const state = {
   lang: 'ua',
   menuOpen: false,
   faqOpen: 0,
+  photo: -1,
 };
 
 function pad(n) { return String(n).padStart(2, '0'); }
@@ -213,26 +235,8 @@ function escapeHtml(str) {
   return String(str).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 }
 
-function elevationProfileSvg() {
-  return `
-  <svg viewBox="0 0 300 112" class="profile-svg" role="img" aria-label="Elevation profile 105-180 m">
-    <line x1="8" y1="71.6" x2="288" y2="71.6" stroke="#17130E" stroke-opacity="0.18" stroke-width="1" stroke-dasharray="3 4"></line>
-    <line x1="8" y1="52.4" x2="288" y2="52.4" stroke="#17130E" stroke-opacity="0.18" stroke-width="1" stroke-dasharray="3 4"></line>
-    <line x1="8" y1="33.2" x2="288" y2="33.2" stroke="#17130E" stroke-opacity="0.18" stroke-width="1" stroke-dasharray="3 4"></line>
-    <line x1="8" y1="14" x2="288" y2="14" stroke="#17130E" stroke-opacity="0.18" stroke-width="1" stroke-dasharray="3 4"></line>
-    <text x="8" y="68.6" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5B5648">120</text>
-    <text x="8" y="49.4" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5B5648">140</text>
-    <text x="8" y="30.2" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5B5648">160</text>
-    <text x="8" y="11" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5B5648">180 m</text>
-    <path d="M8,86 L39.8,75.4 L71.6,64.9 L103.5,56.2 L135.3,48.6 L157.6,42.8 L173.4,40.9 L183,39.9 L198.9,36.1 L214.8,32.2 L230.7,27.4 L262.5,20.7 L288,14 L288,86 Z" fill="#E23A00" fill-opacity="0.85"></path>
-    <path d="M8,86 L39.8,75.4 L71.6,64.9 L103.5,56.2 L135.3,48.6 L157.6,42.8 L173.4,40.9 L183,39.9 L198.9,36.1 L214.8,32.2 L230.7,27.4 L262.5,20.7 L288,14" fill="none" stroke="#17130E" stroke-width="2"></path>
-    <line x1="8" y1="87" x2="288" y2="87" stroke="#17130E" stroke-width="2"></line>
-    <text x="8" y="100" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5B5648">0</text>
-    <text x="71.6" y="100" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5B5648" text-anchor="middle">200</text>
-    <text x="135.3" y="100" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5B5648" text-anchor="middle">400</text>
-    <text x="198.9" y="100" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5B5648" text-anchor="middle">600</text>
-    <text x="288" y="100" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5B5648" text-anchor="end">880 m</text>
-  </svg>`;
+function escapeHtmlMultiline(str) {
+  return escapeHtml(str).replace(/\n/g, '<br>');
 }
 
 function render() {
@@ -245,20 +249,18 @@ function render() {
     { label: c.regLabel, note: c.regNote, ...reg, dLabel: dayLabel(state.lang, reg.days) },
     { label: c.countdownLabel, note: c.countdownNote, ...race, dLabel: dayLabel(state.lang, race.days) },
   ];
-  const daysWord = dayLabel(state.lang, race.days);
-  const tickerParts = [`${race.days} ${daysWord.toUpperCase()} ${c.tickerParts[0]}`, ...c.tickerParts.slice(1)];
-  const tickerText = tickerParts.join('   ★   ');
-  const facts = c.factsRaw.map((f, i) => ({ ...f, ...FACT_CELLS[i] }));
+  const facts = c.factsRaw.map((f) => ({
+    ...f,
+    ...(/рекорд|record/i.test(f.label) ? FACT_CELL_HIGHLIGHT : FACT_CELL_DEFAULT),
+  }));
 
   document.documentElement.lang = state.lang;
   document.title = c.brand + ' — ' + c.heroTitle;
 
   const app = document.getElementById('app');
   app.innerHTML = `
-    <div class="badge-strip">${escapeHtml(c.badge)}</div>
-
     <nav class="nav">
-      <span class="nav-brand">${escapeHtml(c.brand)}</span>
+      <a href="#top" class="nav-brand">${escapeHtml(c.brand)}</a>
       <div class="nav-controls">
         <div class="lang-switch" aria-label="Language switch / Перемикач мови">
           <button type="button" data-action="lang-ua" aria-pressed="${isUa}" class="lang-btn${isUa ? ' is-active' : ''}">UA</button>
@@ -272,20 +274,17 @@ function render() {
       ${state.menuOpen ? `
       <div class="dropdown">
         <a href="#top">${escapeHtml(c.navHome)}</a>
+        <a href="#route">${escapeHtml(c.navRoute)}</a>
         <a href="#gallery">${escapeHtml(c.navArchive)}</a>
-        <a href="#">${escapeHtml(c.navRecords)}</a>
+        <a href="#voices">${escapeHtml(c.navVoices)}</a>
+        <a href="#story">${escapeHtml(c.navStory)}</a>
+        <a href="#schedule">${escapeHtml(c.navSchedule)}</a>
+        <a href="#results">${escapeHtml(c.navRecords)}</a>
         <a href="#faq">${escapeHtml(c.navFaq)}</a>
         <div class="dropdown-rule"></div>
         <a href="#" class="dropdown-cta">${escapeHtml(c.ctaPrimary)}</a>
       </div>` : ''}
     </nav>
-
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker-track">
-        <span class="ticker-text">${escapeHtml(tickerText)}</span>
-        <span class="ticker-text">${escapeHtml(tickerText)}</span>
-      </div>
-    </div>
 
     <section id="top">
       <div class="hero-inner">
@@ -300,24 +299,15 @@ function render() {
         </div>
       </div>
       <div class="hero-media">
-        <div class="hero-img-placeholder" role="img" aria-label="Велосипедисти піднімаються бруківкою узвозу"></div>
-        <div class="profile-card">
-          <p class="profile-heading">${escapeHtml(c.profileHeading)}</p>
-          ${elevationProfileSvg()}
-        </div>
+        <img src="${HERO_IMAGE}" alt="Велосипедисти піднімаються бруківкою узвозу" class="hero-img">
         <div class="stamp">${escapeHtml(c.heroStamp)}</div>
+        <a href="https://sportmoments.photo/" target="_blank" rel="noopener" class="photo-credit">${escapeHtml(c.photoCredit)} ↗</a>
       </div>
     </section>
 
-    <section class="video-section">
-      <figure class="video-frame">
-        <video id="race-video" autoplay muted loop playsinline></video>
-      </figure>
-    </section>
-
     <div class="container">
-      <section class="facts-section">
-        <h2 class="section-heading-mono">${escapeHtml(c.factsHeading)}</h2>
+      <section id="route" class="facts-section">
+        <h2 class="section-heading-mono"><a href="#route" class="heading-link">${escapeHtml(c.factsHeading)}</a></h2>
         <div class="facts-grid">
           ${facts.map((fact) => `
           <div class="fact-cell" style="background:${fact.bg}">
@@ -328,7 +318,6 @@ function render() {
       </section>
 
       <section class="route-section">
-        <h2 class="section-heading">${escapeHtml(c.routeHeading)}</h2>
         <div id="hv-route-map"></div>
         <div class="route-links">
           <a href="https://maps.app.goo.gl/BRLo8xGGdRsKHYse8" target="_blank" rel="noopener" class="route-link">${escapeHtml(c.linkRoute)} ↗</a>
@@ -337,21 +326,41 @@ function render() {
         </div>
       </section>
 
-      <section class="story-section">
-        <h2 class="section-heading">${escapeHtml(c.storyHeading)}</h2>
-        <div class="story-grid">
-          <div class="story-col">
-            ${c.storyLeft.map((p) => `<p class="story-p">${escapeHtml(p)}</p>`).join('')}
-          </div>
-          <div class="story-col">
-            ${c.storyRight.map((p) => `<p class="story-p">${escapeHtml(p)}</p>`).join('')}
-            <p class="story-kicker">${escapeHtml(c.storyKicker)}</p>
-          </div>
+      <section id="gallery" class="gallery-section">
+        <h2 class="section-heading"><a href="#gallery" class="heading-link">${escapeHtml(c.galleryHeading)}</a></h2>
+        <p class="section-sub">${escapeHtml(c.gallerySub)}</p>
+        <div class="gallery-grid" data-action="open-lightbox">
+          ${GALLERY_IMAGES.map((src, i) => `<figure class="gallery-figure" data-index="${i}"><img src="${src}" alt=""></figure>`).join('')}
+        </div>
+        <div class="gallery-years">
+          <span class="years-label">${escapeHtml(c.galleryCta)}</span>
+          <a href="#" class="year-link">2024 →</a>
+          <a href="#" class="year-link">2025 →</a>
         </div>
       </section>
 
-      <section class="why-section">
-        <h2 class="why-heading">${escapeHtml(c.whyHeading)}</h2>
+      <section id="voices" class="voices-section">
+        <h2 class="section-heading"><a href="#voices" class="heading-link">${escapeHtml(c.voicesHeading)}</a></h2>
+        <div class="voices-grid">
+          ${c.voices.map((v) => `
+          <figure class="voice-card">
+            <blockquote class="voice-quote">${escapeHtmlMultiline(v.quote)}</blockquote>
+            <figcaption class="voice-caption">
+              <span class="voice-name">${escapeHtml(v.name)}</span>
+              <a href="${escapeHtml(v.link)}" target="_blank" rel="noopener" class="voice-link">${escapeHtml(v.handle)} ↗</a>
+              <span class="voice-bike">${escapeHtml(v.bike)}</span>
+            </figcaption>
+          </figure>`).join('')}
+        </div>
+      </section>
+
+      <section id="story" class="story-section">
+        <h2 class="section-heading"><a href="#story" class="heading-link">${escapeHtml(c.storyHeading)}</a></h2>
+        <div class="story-body">${c.storyBody}</div>
+      </section>
+
+      <section id="participate" class="why-section">
+        <h2 class="why-heading"><a href="#participate" class="heading-link">${escapeHtml(c.whyHeading)}</a></h2>
         <div class="why-list">
           ${c.why.map((text, i) => `
           <div class="why-item">
@@ -384,8 +393,8 @@ function render() {
     </section>
 
     <div class="container">
-      <section class="schedule-section">
-        <h2 class="section-heading">${escapeHtml(c.scheduleHeading)}</h2>
+      <section id="schedule" class="schedule-section">
+        <h2 class="section-heading"><a href="#schedule" class="heading-link">${escapeHtml(c.scheduleHeading)}</a></h2>
         <div>
           ${c.schedule.map((item) => `
           <div class="schedule-item">
@@ -396,48 +405,27 @@ function render() {
         </div>
       </section>
 
-      <section class="results-section">
-        <h2 class="section-heading">${escapeHtml(c.resultsHeading)}</h2>
+      <section id="results" class="results-section">
+        <h2 class="section-heading"><a href="#results" class="heading-link">${escapeHtml(c.resultsHeading)}</a></h2>
         <p class="section-sub">${escapeHtml(c.resultsSub)}</p>
-        <div>
-          ${c.results.map((item) => `
-          <div class="results-item">
-            <span class="results-category">${escapeHtml(item.category)}</span>
-            <span class="results-winner">${escapeHtml(item.winner)}</span>
-            <span class="results-time">${escapeHtml(item.time)}</span>
+        <div class="results-years-grid">
+          ${c.resultYears.map((yr) => `
+          <div>
+            <p class="results-year-heading">${escapeHtml(yr.year)}</p>
+            ${yr.rows.map((item) => `
+            <div class="results-item">
+              <span class="results-category">${escapeHtml(item.category)}</span>
+              <a href="${escapeHtml(item.strava)}" target="_blank" rel="noopener" class="results-winner">${escapeHtml(item.winner)}</a>
+              <span class="results-time">${escapeHtml(item.time)}</span>
+            </div>`).join('')}
+            <div class="rule-top"></div>
+            <a href="${escapeHtml(yr.protocol)}" target="_blank" rel="noopener" class="year-link results-protocol-link">${escapeHtml(yr.protocolLabel)} →</a>
           </div>`).join('')}
-          <div class="rule-top"></div>
-        </div>
-        <a href="#" class="results-cta">${escapeHtml(c.resultsCta)} →</a>
-      </section>
-
-      <section id="gallery" class="gallery-section">
-        <h2 class="section-heading">${escapeHtml(c.galleryHeading)}</h2>
-        <p class="section-sub">${escapeHtml(c.gallerySub)}</p>
-        <div class="gallery-grid">
-          <figure class="gallery-figure"><div class="gallery-placeholder"></div></figure>
-          <figure class="gallery-figure"><div class="gallery-placeholder"></div></figure>
-          <figure class="gallery-figure"><div class="gallery-placeholder"></div></figure>
-        </div>
-        <a href="#" class="gallery-cta">${escapeHtml(c.galleryCta)} →</a>
-      </section>
-
-      <section class="voices-section">
-        <h2 class="section-heading">${escapeHtml(c.voicesHeading)}</h2>
-        <div class="voices-grid">
-          ${c.voices.map((v) => `
-          <figure class="voice-card">
-            <blockquote class="voice-quote">${escapeHtml(v.quote)}</blockquote>
-            <figcaption class="voice-caption">
-              <span class="voice-name">${escapeHtml(v.name)}</span>
-              <a href="${escapeHtml(v.link)}" target="_blank" rel="noopener" class="voice-link">${escapeHtml(v.handle)} ↗</a>
-            </figcaption>
-          </figure>`).join('')}
         </div>
       </section>
 
       <section id="faq" class="faq-section">
-        <h2 class="section-heading">${escapeHtml(c.faqHeading)}</h2>
+        <h2 class="section-heading"><a href="#faq" class="heading-link">${escapeHtml(c.faqHeading)}</a></h2>
         <div>
           ${c.faqRaw.map((item, i) => {
             const open = state.faqOpen === i;
@@ -465,6 +453,21 @@ function render() {
         <a href="#" class="final-cta">${escapeHtml(c.ctaPrimary)}</a>
       </div>
     </section>
+
+    ${state.photo >= 0 ? `
+    <div data-action="close-lightbox" role="dialog" aria-modal="true" class="lightbox">
+      <div class="lightbox-img" style="background-image: url('${GALLERY_IMAGES[state.photo]}');"></div>
+      <div class="lightbox-controls">
+        <button type="button" data-action="prev-photo" aria-label="Previous" class="lightbox-btn">←</button>
+        <span class="lightbox-counter">${state.photo + 1} / ${GALLERY_IMAGES.length}</span>
+        <button type="button" data-action="next-photo" aria-label="Next" class="lightbox-btn">→</button>
+        <button type="button" data-action="close-lightbox" aria-label="Close" class="lightbox-btn lightbox-close">✕</button>
+      </div>
+      <span class="lightbox-date">${escapeHtml(PHOTO_DATE[state.lang])}</span>
+      <a href="https://sportmoments.photo/" target="_blank" rel="noopener" class="lightbox-credit">${escapeHtml(c.photoCredit)} ↗</a>
+    </div>` : ''}
+
+    <a href="#top" class="back-to-top">${escapeHtml(c.backToTop)} ↑</a>
 
     <footer class="footer">
       <div class="footer-inner">
@@ -516,9 +519,28 @@ document.addEventListener('click', (e) => {
   else if (action === 'faq-toggle') {
     const i = Number(btn.dataset.index);
     state.faqOpen = state.faqOpen === i ? -1 : i;
+  } else if (action === 'open-lightbox') {
+    const fig = e.target.closest('[data-index]');
+    if (!fig) return;
+    state.photo = Number(fig.dataset.index);
+  } else if (action === 'close-lightbox') {
+    state.photo = -1;
+  } else if (action === 'prev-photo') {
+    state.photo = (state.photo - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length;
+  } else if (action === 'next-photo') {
+    state.photo = (state.photo + 1) % GALLERY_IMAGES.length;
   } else {
     return;
   }
+  render();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (state.photo < 0) return;
+  if (e.key === 'Escape') state.photo = -1;
+  else if (e.key === 'ArrowRight') state.photo = (state.photo + 1) % GALLERY_IMAGES.length;
+  else if (e.key === 'ArrowLeft') state.photo = (state.photo - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length;
+  else return;
   render();
 });
 
