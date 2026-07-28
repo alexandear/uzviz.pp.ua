@@ -27,7 +27,7 @@ const GALLERY_IMAGES = [
 const content = {
   ua: {
     brand: 'Гори Вище',
-    navHome: 'Головна', navRoute: 'Маршрут', navArchive: 'Світлини', navVoices: 'Відгуки', navStory: 'Історія', navSchedule: 'План дня', navRecords: 'Результати', navFaq: 'FAQ', navNextSteps: 'Що далі', navStrategy: 'Стратегія',
+    navRoute: 'Маршрут', navArchive: 'Світлини', navVoices: 'Відгуки', navStory: 'Історія', navParticipate: 'Участь', navSchedule: 'План дня', navRecords: 'Результати', navFaq: 'FAQ', navNextSteps: 'Що далі', navStrategy: 'Стратегія',
     ctaPrimary: 'Зареєструватись', ctaSecondary: 'Положення',
     heroKicker: 'Аматорський вело-підйом · Київ · 1 серпня',
     heroTitle: 'Три хвилини болю. І це того варте.',
@@ -128,7 +128,7 @@ const content = {
   },
   en: {
     brand: 'Hory Vyshche',
-    navHome: 'Home', navRoute: 'Route', navArchive: 'Photos', navVoices: 'Reviews', navStory: 'Story', navSchedule: 'Schedule', navRecords: 'Results', navFaq: 'FAQ', navNextSteps: 'What’s next', navStrategy: 'Strategy',
+    navRoute: 'Route', navArchive: 'Photos', navVoices: 'Reviews', navStory: 'Story', navParticipate: 'Participate', navSchedule: 'Schedule', navRecords: 'Results', navFaq: 'FAQ', navNextSteps: 'What’s next', navStrategy: 'Strategy',
     ctaPrimary: 'Register', ctaSecondary: 'Rules',
     heroKicker: 'Amateur bike climb · Kyiv · August 1',
     heroTitle: 'Three minutes of pain. Worth every second.',
@@ -323,11 +323,11 @@ function render() {
       </div>
       ${state.menuOpen ? `
       <div class="dropdown">
-        <a href="#top">${escapeHtml(c.navHome)}</a>
         <a href="#route">${escapeHtml(c.navRoute)}</a>
         <a href="#gallery">${escapeHtml(c.navArchive)}</a>
-        <a href="#voices">${escapeHtml(c.navVoices)}</a>
         <a href="#story">${escapeHtml(c.navStory)}</a>
+        <a href="#participate">${escapeHtml(c.navParticipate)}</a>
+        <a href="#voices">${escapeHtml(c.navVoices)}</a>
         <a href="#schedule">${escapeHtml(c.navSchedule)}</a>
         <a href="#results">${escapeHtml(c.navRecords)}</a>
         <a href="#faq">${escapeHtml(c.navFaq)}</a>
@@ -391,21 +391,6 @@ function render() {
         </div>
       </section>
 
-      <section id="voices" class="voices-section">
-        <h2 class="section-heading"><a href="#voices" class="heading-link">${escapeHtml(c.voicesHeading)}</a></h2>
-        <div class="voices-grid">
-          ${c.voices.map((v) => `
-          <figure class="voice-card">
-            <blockquote class="voice-quote">${escapeHtmlMultiline(v.quote)}</blockquote>
-            <figcaption class="voice-caption">
-              <span class="voice-name">${escapeHtml(v.name)}</span>
-              <a href="${escapeHtml(v.link)}" target="_blank" rel="noopener" class="voice-link">${escapeHtml(v.handle)} ↗</a>
-              <span class="voice-bike">${escapeHtml(v.bike)}</span>
-            </figcaption>
-          </figure>`).join('')}
-        </div>
-      </section>
-
       <section id="story" class="story-section">
         <h2 class="section-heading"><a href="#story" class="heading-link">${escapeHtml(c.storyHeading)}</a></h2>
         <div class="story-body">${c.storyBody}</div>
@@ -420,6 +405,21 @@ function render() {
             <p class="why-text">${escapeHtml(text)}</p>
           </div>`).join('')}
           <div class="rule-top"></div>
+        </div>
+      </section>
+
+      <section id="voices" class="voices-section">
+        <h2 class="section-heading"><a href="#voices" class="heading-link">${escapeHtml(c.voicesHeading)}</a></h2>
+        <div class="voices-grid">
+          ${c.voices.map((v) => `
+          <figure class="voice-card">
+            <blockquote class="voice-quote">${escapeHtmlMultiline(v.quote)}</blockquote>
+            <figcaption class="voice-caption">
+              <span class="voice-name">${escapeHtml(v.name)}</span>
+              <a href="${escapeHtml(v.link)}" target="_blank" rel="noopener" class="voice-link">${escapeHtml(v.handle)} ↗</a>
+              <span class="voice-bike">${escapeHtml(v.bike)}</span>
+            </figcaption>
+          </figure>`).join('')}
         </div>
       </section>
     </div>
