@@ -29,18 +29,21 @@ body {
 a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 a:hover { color: var(--ink); }
 
-.page { background: var(--bg); color: var(--ink); overflow-x: hidden; }
+.page { background: var(--bg); color: var(--ink); }
 
 .container { max-width: 1280px; margin: 0 auto; padding: 0 clamp(16px, 5vw, 56px); }
 
 /* nav */
 .nav {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 50;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   padding: 14px clamp(16px, 5vw, 56px);
+  background: var(--bg);
   border-bottom: 3px solid var(--ink);
 }
 .nav-brand {
@@ -274,17 +277,6 @@ a:hover { color: var(--ink); }
 .footer-disclaimer a { color: var(--accent-soft); }
 .footer-fb { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 13px; color: var(--accent-soft); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
 .footer-fb:hover { color: var(--accent-soft); }
-
-/* back to top */
-.back-to-top {
-  position: fixed; right: clamp(16px, 4vw, 32px); bottom: clamp(16px, 4vw, 32px); z-index: 50;
-  display: inline-flex; align-items: center; font-family: 'Unbounded', sans-serif; font-weight: 600;
-  font-size: 13px; text-transform: uppercase; color: var(--bg); background: var(--ink);
-  border: 3px solid var(--ink); padding: 13px 20px; text-decoration: none; box-shadow: 4px 4px 0 var(--accent);
-  opacity: 0; pointer-events: none; transition: opacity 0.2s ease;
-}
-.back-to-top.visible { opacity: 1; pointer-events: auto; }
-.back-to-top:hover { color: var(--bg); }
 
 /* phones: pull corner-pinned captions into normal flow so they can't overlap */
 @media (max-width: 480px) {

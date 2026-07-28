@@ -40,6 +40,6 @@ When adding a photo to `GALLERY_IMAGES`, generate all four files. Filenames map 
 
 Favicons/OG assets live in `assets/` (`favicon.ico`, `apple-touch-icon.png`, `icon-192x192.png`, `icon-512x512.png`, `icon.svg`, `og-image.jpg`, `site.webmanifest`) and are generated from `assets/icon.svg` and the source OG image.
 
-## Cache-busting: bump the version after every asset change
+## Cache-busting: bump the version when committing asset changes
 
-`index.html` loads `css/style.css`, `js/main.js`, and the icons with a `?v=N` query string. **Whenever you modify CSS, JS, or any icon, bump `N`** on the changed references (they are currently all at `?v=3`). This forces browsers — which cache these aggressively, favicons especially — to refetch. Keep the version numbers in sync across all asset references so a single bump refreshes everything.
+`index.html` loads `css/style.css`, `js/main.js`, and the icons with a `?v=N` query string. **Bump `N` only when the CSS/JS/icon changes are committed**, not on every local edit — a single bump per commit is enough, since only what ships to Cloudflare Pages needs cache-busting. This forces browsers — which cache these aggressively, favicons especially — to refetch. Keep the version numbers in sync across all asset references so a single bump refreshes everything.

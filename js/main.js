@@ -125,7 +125,6 @@ const content = {
     footerOrganizers: 'Організатор — команда <a href="https://www.facebook.com/velo100ka" target="_blank" rel="noopener">«Київська Сотка»</a>',
     footerFb: 'Подія на Facebook',
     footerDisclaimer: 'Це неофіційний фан-сайт, створений <a href="https://www.instagram.com/oleksandr.red/" target="_blank" rel="noopener">Олександром Редько</a>, учасником змагань. Реєстрацією та офіційною інформацією опікується організаційний комітет.',
-    backToTop: 'Нагору',
   },
   en: {
     brand: 'Hory Vyshche',
@@ -227,7 +226,6 @@ const content = {
     footerOrganizers: 'Organizer — the <a href="https://www.facebook.com/velo100ka" target="_blank" rel="noopener">«Kyivska Sotka»</a> team',
     footerFb: 'Facebook event',
     footerDisclaimer: 'This is an unofficial fan site created by <a href="https://www.instagram.com/oleksandr.red/" target="_blank" rel="noopener">Oleksandr Redko</a>, a race participant. Registration and official information are handled by the organizing committee.',
-    backToTop: 'To the top',
   },
 };
 
@@ -542,8 +540,6 @@ function render() {
       <a href="https://sportmoments.photo/" target="_blank" rel="noopener" class="lightbox-credit">${escapeHtml(c.photoCredit)} ↗</a>
     </div>` : ''}
 
-    <a href="#top" class="back-to-top">${escapeHtml(c.backToTop)} ↑</a>
-
     <footer class="footer">
       <div class="footer-inner">
         <div class="footer-brand-col">
@@ -557,14 +553,7 @@ function render() {
   `;
 
   mountRouteMap();
-  updateBackToTop();
 }
-
-function updateBackToTop() {
-  const btn = document.querySelector('.back-to-top');
-  if (btn) btn.classList.toggle('visible', window.scrollY > window.innerHeight);
-}
-window.addEventListener('scroll', updateBackToTop, { passive: true });
 
 let routeMapMounted = false;
 function mountRouteMap() {
