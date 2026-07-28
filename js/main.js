@@ -586,6 +586,12 @@ function mountRouteMap() {
 }
 
 document.addEventListener('click', (e) => {
+  // menu links carry no data-action; close the (sticky) dropdown so it doesn't stay pinned over content
+  if (state.menuOpen && e.target.closest('.dropdown a')) {
+    state.menuOpen = false;
+    render();
+    return;
+  }
   const btn = e.target.closest('[data-action]');
   if (!btn) return;
   const action = btn.dataset.action;
