@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>404 — Гори Вище</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/icon.svg?v=4" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.ico?v=4" sizes="any">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=4">
+<link rel="manifest" href="assets/site.webmanifest">
+<meta name="theme-color" content="#17130E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/style.css?v=4">
+<style>
+  .error-page { min-height: 100vh; display: flex; flex-direction: column; }
+  /* invisible stand-in for the main page's 38px menu button, so header height
+     and the language switch position match the home page exactly */
+  .menu-spacer { width: 38px; height: 38px; }
+  .error-inner {
+    flex: 1; display: flex; flex-direction: column; justify-content: center;
+    max-width: 1280px; margin: 0 auto; width: 100%;
+    padding: clamp(28px, 5vw, 56px) clamp(16px, 5vw, 56px);
+  }
+
+  /* staggered reveal on load */
+  .rise { opacity: 0; transform: translateY(16px); animation: rise .7s cubic-bezier(.22,.61,.36,1) forwards; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .rise { animation: none; opacity: 1; transform: none; } }
+
+  .error-kicker {
+    font-family: 'IBM Plex Mono', monospace; font-weight: 600;
+    font-size: clamp(12px, 1.4vw, 14px); letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent); margin: 0 0 clamp(14px, 2.4vw, 24px);
+  }
+  .error-code {
+    font-family: 'Unbounded', sans-serif; font-weight: 900;
+    font-size: clamp(96px, 18vw, 224px); line-height: 0.8;
+    letter-spacing: -0.02em; color: var(--ink); margin: 0 0 clamp(20px, 3vw, 36px);
+  }
+  .error-title {
+    font-family: 'Unbounded', sans-serif; font-weight: 800;
+    font-size: clamp(24px, 3.8vw, 48px); line-height: 1.02;
+    text-transform: uppercase; letter-spacing: -0.01em;
+    margin: 0 0 clamp(24px, 3.4vw, 38px); max-width: 20ch;
+  }
+
+</style>
+</head>
+<body>
+<div class="page error-page">
+  <nav class="nav">
+    <a class="nav-brand" href="/" data-i18n="brand">Гори Вище</a>
+    <div class="nav-controls">
+      <div class="lang-switch" aria-label="Language switch / Перемикач мови">
+        <button type="button" data-lang="ua" class="lang-btn is-active">UA</button>
+        <span class="sep">/</span>
+        <button type="button" data-lang="en" class="lang-btn">EN</button>
+      </div>
+      <div class="menu-spacer" aria-hidden="true"></div>
+    </div>
+  </nav>
+
+  <main class="error-inner">
+    <p class="error-kicker rise" style="animation-delay:.05s" data-i18n="kicker">Сторінку не знайдено</p>
+    <p class="error-code rise" style="animation-delay:.12s">404</p>
+    <h1 class="error-title rise" style="animation-delay:.2s" data-i18n="title">Здається, ти звернув не на той узвіз</h1>
+    <div class="rise" style="animation-delay:.28s">
+      <a class="btn-primary" href="/" data-i18n="cta">На Смородинський</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand-col">
+        <p class="footer-brand" data-i18n="brand">Гори Вище</p>
+        <p class="footer-organizers" data-i18n-html="footerOrganizers">Організатор — команда «Київська Сотка»</p>
+        <p class="footer-disclaimer" data-i18n-html="footerDisclaimer">Це неофіційний фан-сайт.</p>
+      </div>
+      <a class="footer-fb" href="https://www.facebook.com/events/1374282914840076/" target="_blank" rel="noopener" data-i18n="footerFb">Подія на Facebook →</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+  const content = {
+    ua: {
+      brand: 'Гори Вище',
+      kicker: 'Сторінку не знайдено',
+      title: 'Здається, ти звернув не на той узвіз',
+      cta: 'На Смородинський',
+      footerOrganizers: 'Організатор — команда <a href="https://www.facebook.com/velo100ka" target="_blank" rel="noopener">«Київська Сотка»</a>',
+      footerDisclaimer: 'Це неофіційний фан-сайт, створений <a href="https://www.instagram.com/oleksandr.red/" target="_blank" rel="noopener">Олександром Редько</a>, учасником змагань. Реєстрацією та офіційною інформацією опікується організаційний комітет.',
+      footerFb: 'Подія на Facebook →',
+    },
+    en: {
+      brand: 'Hory Vyshche',
+      kicker: 'Page not found',
+      title: 'Looks like you took the wrong climb',
+      cta: 'To Smorodynskyi',
+      footerOrganizers: 'Organizer — the <a href="https://www.facebook.com/velo100ka" target="_blank" rel="noopener">«Kyivska Sotka»</a> team',
+      footerDisclaimer: 'This is an unofficial fan site created by <a href="https://www.instagram.com/oleksandr.red/" target="_blank" rel="noopener">Oleksandr Redko</a>, a race participant. Registration and official information are handled by the organizing committee.',
+      footerFb: 'Facebook event →',
+    },
+  };
+
+  function initialLang() {
+    const saved = localStorage.getItem('lang');
+    if (saved === 'ua' || saved === 'en') return saved;
+    return navigator.language.toLowerCase().startsWith('uk') ? 'ua' : 'en';
+  }
+
+  function setLang(lang) {
+    const c = content[lang];
+    document.documentElement.lang = lang === 'ua' ? 'uk' : 'en';
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      el.textContent = c[el.dataset.i18n];
+    });
+    // organizer/disclaimer carry trusted inline links, matching the main page footer
+    document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+      el.innerHTML = c[el.dataset.i18nHtml];
+    });
+    document.querySelectorAll('.lang-btn').forEach((btn) => {
+      btn.classList.toggle('is-active', btn.dataset.lang === lang);
+    });
+    localStorage.setItem('lang', lang);
+  }
+
+  document.querySelectorAll('.lang-btn').forEach((btn) => {
+    btn.addEventListener('click', () => setLang(btn.dataset.lang));
+  });
+
+  setLang(initialLang());
+</script>
+</body>
+</html>

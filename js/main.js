@@ -27,6 +27,8 @@ const GALLERY_IMAGES = [
 const content = {
   ua: {
     brand: 'Гори Вище',
+    metaTitle: 'Гори Вище — Спринт вгору Смородинським узвозом',
+    metaDescription: 'Велоспринт вгору Смородинським узвозом — історичним бруківочним підйомом до Татарки в Києві.',
     navRoute: 'Маршрут', navArchive: 'Світлини', navVoices: 'Відгуки', navStory: 'Історія', navParticipate: 'Участь', navSchedule: 'План дня', navRecords: 'Результати', navFaq: 'FAQ', navNextSteps: 'Що далі', navStrategy: 'Стратегія',
     ctaPrimary: 'Зареєструватись', ctaSecondary: 'Положення',
     heroKicker: 'Аматорський вело-підйом · Київ · 1 серпня',
@@ -128,6 +130,8 @@ const content = {
   },
   en: {
     brand: 'Hory Vyshche',
+    metaTitle: 'Hory Vyshche — Uphill sprint up Smorodynskyi Uzviz',
+    metaDescription: 'A bike sprint up Smorodynskyi Uzviz — the historic cobblestone climb to Tatarka in Kyiv.',
     navRoute: 'Route', navArchive: 'Photos', navVoices: 'Reviews', navStory: 'Story', navParticipate: 'Participate', navSchedule: 'Schedule', navRecords: 'Results', navFaq: 'FAQ', navNextSteps: 'What’s next', navStrategy: 'Strategy',
     ctaPrimary: 'Register', ctaSecondary: 'Rules',
     heroKicker: 'Amateur bike climb · Kyiv · August 1',
@@ -289,6 +293,31 @@ function picture(src, attrs) {
   return `<picture><source srcset="${webpOf(src)}" type="image/webp"><img src="${src}" ${attrs}></picture>`;
 }
 
+// Social scrapers (Threads/IG/Facebook) read the static index.html and don't
+// run JS, so these updates only affect the browser tab, accessibility and
+// JS-rendering search engines — not shared-link previews.
+const LANG_META = {
+  ua: { htmlLang: 'uk', ogLocale: 'uk_UA' },
+  en: { htmlLang: 'en', ogLocale: 'en_US' },
+};
+
+function setMeta(selector, value) {
+  const el = document.querySelector(selector);
+  if (el) el.setAttribute('content', value);
+}
+
+function syncHeadMeta(lang, c) {
+  const meta = LANG_META[lang];
+  document.documentElement.lang = meta.htmlLang;
+  document.title = c.metaTitle;
+  setMeta('meta[name="description"]', c.metaDescription);
+  setMeta('meta[property="og:title"]', c.metaTitle);
+  setMeta('meta[property="og:description"]', c.metaDescription);
+  setMeta('meta[property="og:locale"]', meta.ogLocale);
+  setMeta('meta[name="twitter:title"]', c.metaTitle);
+  setMeta('meta[name="twitter:description"]', c.metaDescription);
+}
+
 function render() {
   const c = content[state.lang];
   const isUa = state.lang === 'ua';
@@ -304,8 +333,7 @@ function render() {
     ...(/рекорд|record/i.test(f.label) ? FACT_CELL_HIGHLIGHT : FACT_CELL_DEFAULT),
   }));
 
-  document.documentElement.lang = state.lang;
-  document.title = c.brand + ' — ' + c.heroTitle;
+  syncHeadMeta(state.lang, c);
 
   const app = document.getElementById('app');
   app.innerHTML = `
