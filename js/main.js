@@ -27,7 +27,7 @@ const GALLERY_IMAGES = [
 const content = {
   ua: {
     brand: 'Гори Вище',
-    navHome: 'Головна', navRoute: 'Маршрут', navArchive: 'Світлини', navVoices: 'Відгуки', navStory: 'Історія', navSchedule: 'План дня', navRecords: 'Результати', navFaq: 'FAQ',
+    navHome: 'Головна', navRoute: 'Маршрут', navArchive: 'Світлини', navVoices: 'Відгуки', navStory: 'Історія', navSchedule: 'План дня', navRecords: 'Результати', navFaq: 'FAQ', navNextSteps: 'Що далі', navStrategy: 'Стратегія',
     ctaPrimary: 'Зареєструватись', ctaSecondary: 'Положення',
     heroKicker: 'Аматорський вело-підйом · Київ · 1 серпня',
     heroTitle: 'Три хвилини болю. І це того варте.',
@@ -111,6 +111,17 @@ const content = {
     ],
     finalTitle: 'Смородинський вже чекає. Справа за тобою.',
     finalSub: 'Реєстрація займає дві хвилини. Підйом — близько трьох. Гордість — значно довше.',
+    nextStepsHeading: 'Я зареєструвався, що робити далі?',
+    nextSteps: [
+      'Максимально зменш вагу велосипеда: зніми всі фляготримачі, ліхтарики, блимавки, крила, кріплення тощо. Залиш лише велокомп\'ютер, якщо хочеш <a href="https://www.strava.com/activities/12805879448" target="_blank" rel="noopener">трек в Strava</a>. Кожен грам має значення на підйомі.',
+      'Підбери тиск у покришках: значно нижчий, ніж на асфальті. Так бруківка менше кидатиме й колеса краще матимуть щеплення. Використовуй калькулятори тиску від <a href="https://silca.cc/pages/pro-tire-pressure-calculator" target="_blank" rel="noopener">SILCA</a> або <a href="https://axs.sram.com/guides/tire/pressure" target="_blank" rel="noopener">SRAM</a> для базових налаштувань, від яких відштовхуватись.',
+      'Перевір гальма, перемикання передач та затягни основні кріплення, щоб не розкрутились на трясучці. Гальма потрібні, щоб спуститись після фінішу по Подільському узвозі.',
+      'Якщо є можливість, то прикатай трасу — щонайменше один спокійний заїзд, щоб ознайомитись з найгрубшими ділянками бруківки. Якщо немає, просто поїзди по бруківці в місті, щоб звикнути до вібрацій і тряски.',
+      'В день гонки поснідай вуглеводами. Не експериментуй із їжею та напоями, які не пробував раніше.',
+      'Якщо нормально переносиш каву, то за п’ять-десять хвилин до старту випий велику дозу кофеїну чи енергетичного напою. Він підвищить концентрацію та дозволить показати максимум на дистанції.',
+    ],
+    strategyHeading: 'Яка стратегія проходження дистанції?',
+    strategyBody: '<p>У тебе буде дві спроби, щоб показати найкращий час і пройти кваліфікацію — перша може бути розвідкою, друга на максимум.</p><p>Дистанцію зручно поділити на три етапи: асфальт, середня бруківка з поворотами, фінішна частина.</p><p>Асфальт (0-270 м, середній градієнт 10.2%) — розігнатися й набрати ритм. Тут їхатиметься на адреналіні дуже легко, але це омана. Притримай коней, не спали все на початку: далі буде значно важче.</p><p>Середня бруківка (270-600 м, 8.3%) — найважча частина, два неприємні повороти ліворуч та праворуч, незвична трясучка. Звикай до бруківки, тримай рівний каденс і вибирай траєкторію; тут виграється і втрачається найбільше часу.</p><p>Фінішна частина (650-880 м, 9.5%) — тут хотітиметься зійти та кинути крутити, але не ведись. Ще одна петля та фініш. Продовжуй тримати каденс та давити-підтягувати педалі. Терпи через "неможу", через "нехочу". За 80 метрів до фінішу віддавай все, що залишилось.</p><p>Після перетину лінії не зупиняйся, продовжуй легенько крутити, щоб віддихатись та повільно опустити пульс. Серце тобі подякує. Після цього повільно спускайся до місця старту <a href="https://maps.app.goo.gl/zRFpq62MeTwd1txf7" target="_blank" rel="noopener">Подільським узвозом</a>.</p>',
     footerOrganizers: 'Організатор — команда <a href="https://www.facebook.com/velo100ka" target="_blank" rel="noopener">«Київська Сотка»</a>',
     footerFb: 'Подія на Facebook',
     footerDisclaimer: 'Це неофіційний фан-сайт, створений <a href="https://www.instagram.com/oleksandr.red/" target="_blank" rel="noopener">Олександром Редько</a>, учасником змагань. Реєстрацією та офіційною інформацією опікується організаційний комітет.',
@@ -118,7 +129,7 @@ const content = {
   },
   en: {
     brand: 'Hory Vyshche',
-    navHome: 'Home', navRoute: 'Route', navArchive: 'Photos', navVoices: 'Reviews', navStory: 'Story', navSchedule: 'Schedule', navRecords: 'Results', navFaq: 'FAQ',
+    navHome: 'Home', navRoute: 'Route', navArchive: 'Photos', navVoices: 'Reviews', navStory: 'Story', navSchedule: 'Schedule', navRecords: 'Results', navFaq: 'FAQ', navNextSteps: 'What’s next', navStrategy: 'Strategy',
     ctaPrimary: 'Register', ctaSecondary: 'Rules',
     heroKicker: 'Amateur bike climb · Kyiv · August 1',
     heroTitle: 'Three minutes of pain. Worth every second.',
@@ -202,6 +213,17 @@ const content = {
     ],
     finalTitle: 'Smorodynskyi is already waiting. It’s up to you now.',
     finalSub: 'Registration takes two minutes. The climb takes about three. The pride lasts much longer.',
+    nextStepsHeading: 'I’ve registered, what’s next?',
+    nextSteps: [
+      'Strip the weight off your bike as much as possible: remove all bottle cages, lights, blinkers, fenders, mounts and so on. Keep only a bike computer if you want a <a href="https://www.strava.com/activities/12805879448" target="_blank" rel="noopener">track on Strava</a>. Every gram counts on the climb.',
+      'Dial in your tire pressure: much lower than on asphalt. That way the cobblestone kicks less and the wheels grip better. Use the tire pressure calculators from <a href="https://silca.cc/pages/pro-tire-pressure-calculator" target="_blank" rel="noopener">SILCA</a> or <a href="https://axs.sram.com/guides/tire/pressure" target="_blank" rel="noopener">SRAM</a> for a baseline to start from.',
+      'Check your brakes and shifting, and tighten the main bolts so they don’t rattle loose on the cobbles. You’ll need the brakes to descend after the finish along the Podil descent.',
+      'If you can, pre-ride the course — at least one calm lap to get to know the roughest patches of cobblestone. If not, just ride the cobblestone around the city to get used to the vibrations and shaking.',
+      'On race day, eat a carbohydrate breakfast. Don’t experiment with food or drinks you haven’t tried before.',
+      'If you tolerate coffee well, take a large dose of caffeine or an energy drink five to ten minutes before the start. It’ll sharpen your focus and let you give your maximum on the course.',
+    ],
+    strategyHeading: 'What’s the strategy for the course?',
+    strategyBody: '<p>You get two runs to post your best time and make it through qualifying — the first can be a recon run, the second is for going all out.</p><p>It’s convenient to split the course into three stages: asphalt, mid cobblestone with turns, finish cobblestone.</p><p>Asphalt (0–270 m, average gradient 10.2%) — build up speed and find your rhythm. It’ll feel very easy on adrenaline here, but that’s a trap. Hold your horses, don’t burn everything at the start: it gets much harder ahead.</p><p>Mid cobblestone (270–600 m, 8.3%) — the hardest part, two nasty turns left and right, unfamiliar shaking. Get used to the cobblestone, hold a steady cadence and pick your line; this is where the most time is won or lost.</p><p>Finish cobblestone (650–880 m, 9.5%) — here you’ll want to give up and stop pedaling, but don’t fall for it. One more loop and the finish. Keep holding your cadence and keep pushing and pulling the pedals. Endure through the “I can’t,” through the “I don’t want to.” In the last 80 meters, give everything you have left.</p><p>After crossing the line, don’t stop — keep pedaling gently to catch your breath and slowly bring your heart rate down. Your heart will thank you. After that, descend slowly back to the start along the <a href="https://maps.app.goo.gl/zRFpq62MeTwd1txf7" target="_blank" rel="noopener">Podil descent</a>.</p>',
     footerOrganizers: 'Organizer — the <a href="https://www.facebook.com/velo100ka" target="_blank" rel="noopener">«Kyivska Sotka»</a> team',
     footerFb: 'Facebook event',
     footerDisclaimer: 'This is an unofficial fan site created by <a href="https://www.instagram.com/oleksandr.red/" target="_blank" rel="noopener">Oleksandr Redko</a>, a race participant. Registration and official information are handled by the organizing committee.',
@@ -311,6 +333,8 @@ function render() {
         <a href="#schedule">${escapeHtml(c.navSchedule)}</a>
         <a href="#results">${escapeHtml(c.navRecords)}</a>
         <a href="#faq">${escapeHtml(c.navFaq)}</a>
+        <a href="#next-steps">${escapeHtml(c.navNextSteps)}</a>
+        <a href="#strategy">${escapeHtml(c.navStrategy)}</a>
         <div class="dropdown-rule"></div>
         <a href="${REGISTER_URL}" target="_blank" rel="noopener" class="dropdown-cta">${escapeHtml(c.ctaPrimary)}</a>
       </div>` : ''}
@@ -485,6 +509,25 @@ function render() {
         <a href="${REGISTER_URL}" target="_blank" rel="noopener" class="final-cta">${escapeHtml(c.ctaPrimary)}</a>
       </div>
     </section>
+
+    <div class="container">
+      <section id="next-steps" class="why-section">
+        <h2 class="section-heading"><a href="#next-steps" class="heading-link">${escapeHtml(c.nextStepsHeading)}</a></h2>
+        <div class="why-list">
+          ${c.nextSteps.map((text, i) => `
+          <div class="why-item">
+            <span class="why-num">${pad(i + 1)}</span>
+            <p class="why-text">${text}</p>
+          </div>`).join('')}
+          <div class="rule-top"></div>
+        </div>
+      </section>
+
+      <section id="strategy" class="story-section">
+        <h2 class="section-heading"><a href="#strategy" class="heading-link">${escapeHtml(c.strategyHeading)}</a></h2>
+        <div class="story-body">${c.strategyBody}</div>
+      </section>
+    </div>
 
     ${state.photo >= 0 ? `
     <div data-action="close-lightbox" role="dialog" aria-modal="true" class="lightbox">
