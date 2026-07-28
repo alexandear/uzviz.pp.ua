@@ -1,0 +1,15 @@
+# Ignore everything by default
+*
+
+# Allow only specific files and directories
+!assets/
+!assets/**
+!css/
+!css/**
+!js/
+!js/**
+!index.html
+!404.html
+
+# Keep .assetsignore itself
+!.assetsignore

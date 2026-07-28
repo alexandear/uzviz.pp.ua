@@ -14,6 +14,13 @@ python3 -m http.server 8003 --directory .
 
 Then open http://localhost:8003. There is no build, lint, or test setup — edit files and refresh.
 
+## Deployment
+
+Deployed to Cloudflare Pages. Two files at the repo root control what ships:
+
+- **`wrangler.toml`** — serves the repo root as-is (`directory = "./"`, no build step) and routes unknown paths to the 404 page (`not_found_handling = "404-page"`, i.e. `404.html`).
+- **`.assetsignore`** — a `.gitignore`-syntax whitelist that keeps everything *except* the site itself out of the deployment. Because `directory = "./"` would otherwise upload the whole repo, this file ignores `*` and re-includes only `index.html`, `404.html`, and the `assets/`, `css/`, `js/` directories. Matched files are never uploaded (not just hidden), so `CLAUDE.md`, `README.md`, `wrangler.toml`, `.git/`, etc. are never served. **When adding a new top-level file that must be public, add a matching `!name` line** — the whitelist excludes it by default.
+
 ## Architecture
 
 The whole app is three files: `index.html`, `css/style.css`, `js/main.js`.
