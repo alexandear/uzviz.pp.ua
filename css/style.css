@@ -33,6 +33,9 @@ a:hover { color: var(--ink); }
 
 .container { max-width: 1280px; margin: 0 auto; padding: 0 clamp(16px, 5vw, 56px); }
 
+/* offset anchor jumps so headings clear the sticky nav */
+section[id] { scroll-margin-top: 90px; }
+
 /* nav */
 .nav {
   position: sticky;
