@@ -1,9 +1,6 @@
 'use strict';
 
-const RACE_DATE = new Date('2026-08-01T09:02:00+03:00').getTime();
-const REG_DATE = new Date('2026-07-30T18:00:00+03:00').getTime();
-
-const REGISTER_URL = 'https://e.ticketme.org/events/Hory-vyshche-2026';
+const SOTKA_FB_URL = 'https://www.facebook.com/velo100ka';
 const RULES_URL = 'https://timingevents.com/events/25180073';
 const PHOTOS_2024_URL = 'https://sportmoments.photo/gallery.php?album=go_higher_2024';
 const PHOTOS_2025_URL = 'https://www.facebook.com/media/set/?vanity=piskun.oleg&set=a.24296077950048786';
@@ -27,11 +24,11 @@ const GALLERY_IMAGES = [
 const content = {
   ua: {
     brand: 'Гори Вище',
-    metaTitle: 'Гори Вище — Спринт вгору Смородинським узвозом',
+    metaTitle: 'Гори Вище — Спринт вгору Смородинським - Подія відбулась',
     metaDescription: 'Велоспринт вгору Смородинським узвозом — історичним бруківочним підйомом до Татарки в Києві.',
     navRoute: 'Маршрут', navArchive: 'Світлини', navVoices: 'Відгуки', navStory: 'Історія', navParticipate: 'Участь', navSchedule: 'План дня', navRecords: 'Результати', navFaq: 'FAQ', navNextSteps: 'Що далі', navStrategy: 'Стратегія',
-    ctaPrimary: 'Зареєструватись', ctaSecondary: 'Положення',
-    heroKicker: 'Аматорський вело-підйом · Київ · 1 серпня',
+    ctaFollow: 'Соцмережі «Сотки»', ctaSecondary: 'Положення',
+    heroKicker: 'Аматорський вело-підйом · Київ · Сезон 2026 відбувся · Чекайте на 2027',
     heroTitle: 'Три хвилини болю. І це того варте.',
     heroSub: 'Спринт вгору «Гори Вище»: 880 метрів Смородинського узвозу, бруківка, дві спроби і фінал на нервах. Тобі не треба бути PRO — треба лиш наважитись приїхати.',
     heroStamp: 'Смородинський узвіз · Татарка',
@@ -58,10 +55,9 @@ const content = {
       'Доторкнись до духу Туру Фландрії — легендарної бруківкової класики, що надихнула «Гори Вище».',
     ],
     storyHeading: 'Чому гонка саме на Смородинському',
-    storyBody: '<p><a href="https://uk.wikipedia.org/wiki/%D0%A1%D0%BC%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%83%D0%B7%D0%B2%D1%96%D0%B7" target="_blank" rel="noopener">Смородинський узвіз</a> — найдовший підйом Києва з бруківкою. Це старовинна вулиця у Шевченківському районі, місцевість Куренівка. До середини XX століття узвіз був забудований, а нині проходить через регіональний ландшафтний парк «Смородинський».</p><p>На схилах яру ховаються входи до <a href="https://uk.wikipedia.org/wiki/%D0%A1%D0%BC%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B0_%D0%BF%D0%B5%D1%87%D0%B5%D1%80%D0%B0" target="_blank" rel="noopener">Смородинської печери</a> — комплексу з майже двадцяти підземних споруд віком 4–3 тисячоліття до н. е. З печерою пов’язана легенда про двобій Добрині Микитича зі Змієм, тому її ще називають Змієвою печерою. Сьогодні це офіційна археологічна пам’ятка України.</p><p>У 2021-му замість повноцінної гонки "Узвіз" <a href="https://www.facebook.com/media/set/?vanity=bikeincity&set=a.1955120627994450" target="_blank" rel="noopener">відбувся</a> лише «пробний» заїзд — через карантинні обмеження COVID-19.</p><p>Але вже <a href="https://www.facebook.com/events/1686152935573625/" target="blank" rel="noopener">у 2024 році</a> ідею змагань відновили й провели її на відремонтованому узвозі за участі близько 70 спортсменів. Попри шахеди, холод та тривоги, вона пройшла успішно, зібрані кошти з якої пішли для бійців загону ударних БпЛА «Злі Птахи».</p><p>У 2025-му <a href="https://www.facebook.com/events/1095082119158596/" target="blank" rel="noopener">«Гори Вище»</a> перенесли з осені на кінець літа — перед «Київською Соткою». У змаганнях взяли участь 50 райдерів у різних категоріях.</p><p>Тепер, у <a href="https://www.facebook.com/events/1374282914840076" target="_blank" rel="noopener">2026 році</a>, ми знову проводимо спринт вгору. Амбітні велоспортсмени позмагаються, а менш підготовлені — просто насолодяться красою ландшафтного парку й впишуть знакову сторінку у власну велоісторію.</p>',
-    regLabel: 'Кінець реєстрації за', regNote: 'Реєстрація відкрита до 30 липня, 18:00',
-    countdownLabel: 'До старту', countdownNote: 'Старт: 1 серпня, 09:02',
-    cdHoursLabel: 'годин', cdMinsLabel: 'хвилин',
+    storyBody: '<p><a href="https://uk.wikipedia.org/wiki/%D0%A1%D0%BC%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%83%D0%B7%D0%B2%D1%96%D0%B7" target="_blank" rel="noopener">Смородинський узвіз</a> — найдовший підйом Києва з бруківкою. Це старовинна вулиця у Шевченківському районі, місцевість Куренівка. До середини XX століття узвіз був забудований, а нині проходить через регіональний ландшафтний парк «Смородинський».</p><p>На схилах яру ховаються входи до <a href="https://uk.wikipedia.org/wiki/%D0%A1%D0%BC%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B0_%D0%BF%D0%B5%D1%87%D0%B5%D1%80%D0%B0" target="_blank" rel="noopener">Смородинської печери</a> — комплексу з майже двадцяти підземних споруд віком 4–3 тисячоліття до н. е. З печерою пов’язана легенда про двобій Добрині Микитича зі Змієм, тому її ще називають Змієвою печерою. Сьогодні це офіційна археологічна пам’ятка України.</p><p>У 2021-му замість повноцінної гонки "Узвіз" <a href="https://www.facebook.com/media/set/?vanity=bikeincity&set=a.1955120627994450" target="_blank" rel="noopener">відбувся</a> лише «пробний» заїзд — через карантинні обмеження COVID-19.</p><p>Але вже <a href="https://www.facebook.com/events/1686152935573625/" target="blank" rel="noopener">у 2024 році</a> ідею змагань відновили й провели її на відремонтованому узвозі за участі близько 70 спортсменів. Попри шахеди, холод та тривоги, вона пройшла успішно, зібрані кошти з якої пішли для бійців загону ударних БпЛА «Злі Птахи».</p><p>У 2025-му <a href="https://www.facebook.com/events/1095082119158596/" target="blank" rel="noopener">«Гори Вище»</a> перенесли з осені на кінець літа — перед «Київською Соткою». У змаганнях взяли участь 50 райдерів у різних категоріях.</p><p>У <a href="https://www.facebook.com/events/1374282914840076" target="_blank" rel="noopener">2026 році</a> «Гори Вище» пройшли втретє — знову перед «Київською Соткою». Амбітні велоспортсмени позмагалися за нові рекорди, а менш підготовлені просто насолодилися красою ландшафтного парку й вписали знакову сторінку у власну велоісторію.</p>',
+    expect2027Title: 'Очікуємо у 2027',
+    expect2027Sub: 'Захід завершено. Слідкуйте за соцмережами «Київської Сотки», щоб не пропустити наступний сезон.',
     scheduleHeading: 'План дня',
     schedule: [
       { time: '08:00', event: 'Збір учасників біля місця старту, довидача стартових пакетів' },
@@ -75,19 +71,25 @@ const content = {
       { time: '11:30', event: 'Культурна програма, присвячена історії Києва та Татарки зокрема' },
     ],
     resultsHeading: 'РЕКОРДИ, які чекають, щоб їх побили',
-    resultsSub: 'Переможці 2024 і 2025 років. Хтось має зняти ці рекорди. Чому не ти?',
+    resultsSub: 'Переможці 2024, 2025 і 2026 років. Хтось має зняти ці рекорди. Чому не ти?',
     resultYears: [
       { year: 'Переможці 2024', protocol: 'https://timingevents.com/results/25179818', protocolLabel: 'Протокол 2024', rows: [
-        { category: 'Чоловіки, пряме кермо', winner: 'Юрій Кресан', time: '2:39', strava: 'https://www.strava.com/activities/12852597860' },
-        { category: 'Жінки, пряме кермо', winner: 'Наталія Ковалевська', time: '3:45', strava: 'https://www.strava.com/activities/12804364329' },
-        { category: 'Чоловіки, кермо «баран»', winner: 'Павло Міщенко', time: '2:38', strava: 'https://www.strava.com/activities/15315853196' },
-        { category: 'Жінки, кермо «баран»', winner: 'Марина Кизилова', time: '3:30', strava: 'https://www.strava.com/activities/12804703142' },
+        { category: 'Чоловіки, пряме<br>кермо', winner: 'Юрій Кресан', time: '2:39', strava: 'https://www.strava.com/activities/12852597860' },
+        { category: 'Жінки, пряме<br>кермо', winner: 'Наталія Ковалевська', time: '3:45', strava: 'https://www.strava.com/activities/12804364329' },
+        { category: 'Чоловіки, кермо<br>«баран»', winner: 'Павло Міщенко', time: '2:38', strava: 'https://www.strava.com/activities/15315853196' },
+        { category: 'Жінки, кермо<br>«баран»', winner: 'Марина Кизилова', time: '3:30', strava: 'https://www.strava.com/activities/12804703142' },
       ] },
       { year: 'Переможці 2025', protocol: 'https://drive.google.com/file/d/1ZO6vvxxCnTLvbUHJbwxVb2aB_-pTWkJI/view', protocolLabel: 'Протокол 2025', rows: [
-        { category: 'Чоловіки, пряме кермо', winner: 'Максим Тимощук', time: '2:51', strava: 'https://www.strava.com/activities/15317493276' },
-        { category: 'Жінки, пряме кермо', winner: 'Дар’я Опенько', time: '3:32', strava: 'https://www.strava.com/activities/15315104828' },
-        { category: 'Чоловіки, кермо «баран»', winner: 'Дмитро Мельников', time: '2:46', strava: 'https://www.strava.com/activities/15315880154' },
-        { category: 'Жінки, кермо «баран»', winner: 'Ірина Шіхадат', time: '4:49', strava: 'https://www.strava.com/activities/15306946309' },
+        { category: 'Чоловіки, пряме<br>кермо', winner: 'Максим Тимощук', time: '2:51', strava: 'https://www.strava.com/activities/15317493276' },
+        { category: 'Жінки, пряме<br>кермо', winner: 'Дар’я Опенько', time: '3:32', strava: 'https://www.strava.com/activities/15315104828' },
+        { category: 'Чоловіки, кермо<br>«баран»', winner: 'Дмитро Мельников', time: '2:46', strava: 'https://www.strava.com/activities/15315880154' },
+        { category: 'Жінки, кермо<br>«баран»', winner: 'Ірина Шіхадат', time: '4:49', strava: 'https://www.strava.com/activities/15306946309' },
+      ] },
+      { year: 'Переможці 2026', protocol: 'https://drive.google.com/file/d/1_0Lwjh0Iwarhm_x2fyIB60BZgqobbLbp/view', protocolLabel: 'Протокол 2026', rows: [
+        { category: 'Чоловіки, пряме<br>кермо', winner: 'Олександр Шатов', time: '2:30', strava: 'https://www.strava.com/activities/19552108180' },
+        { category: 'Жінки, пряме<br>кермо', winner: 'Наталія Ковалевська', time: '3:43', strava: 'https://www.strava.com/activities/19552912174' },
+        { category: 'Чоловіки, кермо<br>«баран»', winner: 'Дмитро Мельников', time: '2:39', strava: 'https://www.strava.com/activities/19551957552' },
+        { category: 'Жінки, кермо<br>«баран»', winner: 'Анна Бугай', time: '2:55', strava: 'https://www.strava.com/activities/19551497344' },
       ] },
     ],
     galleryHeading: 'Світлини з минулих подій',
@@ -125,16 +127,16 @@ const content = {
     strategyHeading: 'Яка стратегія проходження дистанції?',
     strategyBody: '<p>У тебе буде дві спроби, щоб показати найкращий час і пройти кваліфікацію — перша може бути розвідкою, друга на максимум.</p><p>Дистанцію зручно поділити на три етапи: асфальт, середня бруківка з поворотами, фінішна частина.</p><p>Асфальт (0-270 м, середній градієнт 10.2%) — розігнатися й набрати ритм. Тут їхатиметься на адреналіні дуже легко, але це омана. Притримай коней, не спали все на початку: далі буде значно важче.</p><p>Середня бруківка (270-600 м, 8.3%) — найважча частина, два неприємні повороти ліворуч та праворуч, незвична трясучка. Звикай до бруківки, тримай рівний каденс і вибирай траєкторію; тут виграється і втрачається найбільше часу.</p><p>Фінішна частина (650-880 м, 9.5%) — тут хотітиметься зійти та кинути крутити, але не ведись. Ще одна петля та фініш. Продовжуй тримати каденс та давити-підтягувати педалі. Терпи через "неможу", через "нехочу". За 80 метрів до фінішу віддавай все, що залишилось.</p><p>Після перетину лінії не зупиняйся, продовжуй легенько крутити, щоб віддихатись та повільно опустити пульс. Серце тобі подякує. Після цього повільно спускайся до місця старту <a href="https://maps.app.goo.gl/zRFpq62MeTwd1txf7" target="_blank" rel="noopener">Подільським узвозом</a>.</p>',
     footerOrganizers: 'Організатор — команда <a href="https://www.facebook.com/velo100ka" target="_blank" rel="noopener">«Київська Сотка»</a>',
-    footerFb: 'Подія на Facebook',
+    footerFb: 'Facebook "Київська Сотка"',
     footerDisclaimer: 'Це неофіційний фан-сайт, створений <a href="https://www.instagram.com/oleksandr.red/" target="_blank" rel="noopener">Олександром Редько</a>, учасником змагань. Реєстрацією та офіційною інформацією опікується організаційний комітет.',
   },
   en: {
     brand: 'Hory Vyshche',
-    metaTitle: 'Hory Vyshche — Uphill sprint up Smorodynskyi Uzviz',
+    metaTitle: 'Hory Vyshche — Uphill sprint up Smorodynskyi Uzviz - The event is over',
     metaDescription: 'A bike sprint up Smorodynskyi Uzviz — the historic cobblestone climb to Tatarka in Kyiv.',
     navRoute: 'Route', navArchive: 'Photos', navVoices: 'Reviews', navStory: 'Story', navParticipate: 'Participate', navSchedule: 'Schedule', navRecords: 'Results', navFaq: 'FAQ', navNextSteps: 'What’s next', navStrategy: 'Strategy',
-    ctaPrimary: 'Register', ctaSecondary: 'Rules',
-    heroKicker: 'Amateur bike climb · Kyiv · August 1',
+    ctaFollow: '«Sotka» socials', ctaSecondary: 'Rules',
+    heroKicker: 'Amateur bike climb · Kyiv · 2026 season is over · See you in 2027',
     heroTitle: 'Three minutes of pain. Worth every second.',
     heroSub: 'Uphill sprint «Hory Vyshche»: 880 meters of Smorodynskyi Uzviz cobblestone, two attempts, and a nail-biting final. You don’t need to be a pro — you just need to dare to show up.',
     heroStamp: 'Smorodynskyi Uzviz · Tatarka',
@@ -161,10 +163,9 @@ const content = {
       'A taste of the Tour of Flanders — the legendary cobbled classic that inspired «Hory Vyshche».',
     ],
     storyHeading: 'Why the race is held on Smorodynskyi',
-    storyBody: '<p><a href="https://uk.wikipedia.org/wiki/%D0%A1%D0%BC%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%83%D0%B7%D0%B2%D1%96%D0%B7" target="_blank" rel="noopener">Smorodynskyi Uzviz</a> is Kyiv’s longest cobblestone climb. It’s a historic street in the Shevchenkivskyi district, in the Kurenivka area. Built up until the mid-20th century, it now runs through the Smorodynskyi regional landscape park.</p><p>The slopes of the ravine hide the entrances to the <a href="https://uk.wikipedia.org/wiki/%D0%A1%D0%BC%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B0_%D0%BF%D0%B5%D1%87%D0%B5%D1%80%D0%B0" target="_blank" rel="noopener">Smorodynska Cave</a> — a complex of nearly twenty underground chambers dating back 4,000–3,000 years BCE. A legend about Dobrynia Nikitich’s duel with the Dragon is tied to the cave, giving it its alternate name, the Dragon’s Cave. Today it’s an officially recognized archaeological monument of Ukraine.</p><p>In 2021, instead of a full "Uzviz" race, only a "trial" run <a href="https://www.facebook.com/media/set/?vanity=bikeincity&set=a.1955120627994450" target="_blank" rel="noopener">took place</a> — due to COVID-19 quarantine restrictions.</p><p>But already <a href="https://www.facebook.com/events/1686152935573625/" target="_blank" rel="noopener">in 2024</a> the idea of the race was revived and held on the resurfaced climb, with around 70 athletes taking part. Despite Shahed drones, the cold, and air-raid alerts, it went off successfully, and the funds raised went to the fighters of the "Zli Ptakhy" strike UAV unit.</p><p>In 2025, <a href="https://www.facebook.com/events/1095082119158596/" target="_blank" rel="noopener">"Hory Vyshche"</a> moved from autumn to the end of summer — right before "Kyivska Sotka." 50 riders took part across the categories.</p><p>Now, in <a href="https://www.facebook.com/events/1374282914840076" target="_blank" rel="noopener">2026</a>, we’re holding the uphill sprint once again. Ambitious cyclists will compete, while the less prepared will simply enjoy the beauty of the landscape park and write a landmark page into their own cycling history.</p>',
-    regLabel: 'Registration closes in', regNote: 'Registration open until July 30, 18:00',
-    countdownLabel: 'To the start', countdownNote: 'Start: August 1, 09:02',
-    cdHoursLabel: 'hours', cdMinsLabel: 'minutes',
+    storyBody: '<p><a href="https://uk.wikipedia.org/wiki/%D0%A1%D0%BC%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%83%D0%B7%D0%B2%D1%96%D0%B7" target="_blank" rel="noopener">Smorodynskyi Uzviz</a> is Kyiv’s longest cobblestone climb. It’s a historic street in the Shevchenkivskyi district, in the Kurenivka area. Built up until the mid-20th century, it now runs through the Smorodynskyi regional landscape park.</p><p>The slopes of the ravine hide the entrances to the <a href="https://uk.wikipedia.org/wiki/%D0%A1%D0%BC%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B0_%D0%BF%D0%B5%D1%87%D0%B5%D1%80%D0%B0" target="_blank" rel="noopener">Smorodynska Cave</a> — a complex of nearly twenty underground chambers dating back 4,000–3,000 years BCE. A legend about Dobrynia Nikitich’s duel with the Dragon is tied to the cave, giving it its alternate name, the Dragon’s Cave. Today it’s an officially recognized archaeological monument of Ukraine.</p><p>In 2021, instead of a full "Uzviz" race, only a "trial" run <a href="https://www.facebook.com/media/set/?vanity=bikeincity&set=a.1955120627994450" target="_blank" rel="noopener">took place</a> — due to COVID-19 quarantine restrictions.</p><p>But already <a href="https://www.facebook.com/events/1686152935573625/" target="_blank" rel="noopener">in 2024</a> the idea of the race was revived and held on the resurfaced climb, with around 70 athletes taking part. Despite Shahed drones, the cold, and air-raid alerts, it went off successfully, and the funds raised went to the fighters of the "Zli Ptakhy" strike UAV unit.</p><p>In 2025, <a href="https://www.facebook.com/events/1095082119158596/" target="_blank" rel="noopener">"Hory Vyshche"</a> moved from autumn to the end of summer — right before "Kyivska Sotka." 50 riders took part across the categories.</p><p>In <a href="https://www.facebook.com/events/1374282914840076" target="_blank" rel="noopener">2026</a>, «Hory Vyshche» ran for the third time — again right before «Kyivska Sotka». Ambitious cyclists raced for new records, while the less prepared simply enjoyed the beauty of the landscape park and wrote a landmark page into their own cycling history.</p>',
+    expect2027Title: 'See you in 2027',
+    expect2027Sub: 'The event is over. Follow «Kyivska Sotka» on social media so you don’t miss the next season.',
     scheduleHeading: 'Race-day schedule',
     schedule: [
       { time: '08:00', event: 'Riders gather near the start, race-kit pickup' },
@@ -178,7 +179,7 @@ const content = {
       { time: '11:30', event: 'Cultural programme on the history of Kyiv and Tatarka' },
     ],
     resultsHeading: 'Times waiting to be beaten',
-    resultsSub: '2024 and 2025 category winners. Someone has to take these records down. Why not you?',
+    resultsSub: '2024, 2025 and 2026 category winners. Someone has to take these records down. Why not you?',
     resultYears: [
       { year: '2024 winners', protocol: 'https://timingevents.com/results/25179818', protocolLabel: '2024 protocol', rows: [
         { category: 'Men, flat bar', winner: 'Yurii Kresan', time: '2:39', strava: 'https://www.strava.com/activities/12852597860' },
@@ -191,6 +192,12 @@ const content = {
         { category: 'Women, flat bar', winner: 'Daria Openko', time: '3:32', strava: 'https://www.strava.com/activities/15315104828' },
         { category: 'Men, drop bar', winner: 'Dmytro Melnykov', time: '2:46', strava: 'https://www.strava.com/activities/15315880154' },
         { category: 'Women, drop bar', winner: 'Iryna Shikhadat', time: '4:49', strava: 'https://www.strava.com/activities/15306946309' },
+      ] },
+      { year: '2026 winners', protocol: 'https://drive.google.com/file/d/1_0Lwjh0Iwarhm_x2fyIB60BZgqobbLbp/view', protocolLabel: '2026 protocol', rows: [
+        { category: 'Men, flat bar', winner: 'Oleksandr Shatov', time: '2:30' },
+        { category: 'Women, flat bar', winner: 'Nataliia Kovalevska', time: '3:43' },
+        { category: 'Men, drop bar', winner: 'Dmytro Melnykov', time: '2:39' },
+        { category: 'Women, drop bar', winner: 'Anna Buhai', time: '2:55' },
       ] },
     ],
     galleryHeading: 'Photos from past events',
@@ -228,7 +235,7 @@ const content = {
     strategyHeading: 'What’s the strategy for the course?',
     strategyBody: '<p>You get two runs to post your best time and make it through qualifying — the first can be a recon run, the second is for going all out.</p><p>It’s convenient to split the course into three stages: asphalt, mid cobblestone with turns, finish cobblestone.</p><p>Asphalt (0–270 m, average gradient 10.2%) — build up speed and find your rhythm. It’ll feel very easy on adrenaline here, but that’s a trap. Hold your horses, don’t burn everything at the start: it gets much harder ahead.</p><p>Mid cobblestone (270–600 m, 8.3%) — the hardest part, two nasty turns left and right, unfamiliar shaking. Get used to the cobblestone, hold a steady cadence and pick your line; this is where the most time is won or lost.</p><p>Finish cobblestone (650–880 m, 9.5%) — here you’ll want to give up and stop pedaling, but don’t fall for it. One more loop and the finish. Keep holding your cadence and keep pushing and pulling the pedals. Endure through the “I can’t,” through the “I don’t want to.” In the last 80 meters, give everything you have left.</p><p>After crossing the line, don’t stop — keep pedaling gently to catch your breath and slowly bring your heart rate down. Your heart will thank you. After that, descend slowly back to the start along the <a href="https://maps.app.goo.gl/zRFpq62MeTwd1txf7" target="_blank" rel="noopener">Podil descent</a>.</p>',
     footerOrganizers: 'Organizer — the <a href="https://www.facebook.com/velo100ka" target="_blank" rel="noopener">«Kyivska Sotka»</a> team',
-    footerFb: 'Facebook event',
+    footerFb: 'Facebook "Kyivska Sotka"',
     footerDisclaimer: 'This is an unofficial fan site created by <a href="https://www.instagram.com/oleksandr.red/" target="_blank" rel="noopener">Oleksandr Redko</a>, a race participant. Registration and official information are handled by the organizing committee.',
   },
 };
@@ -252,26 +259,6 @@ const state = {
 };
 
 function pad(n) { return String(n).padStart(2, '0'); }
-
-function uaDaysWord(n) {
-  const m10 = n % 10, m100 = n % 100;
-  if (m10 === 1 && m100 !== 11) return 'день';
-  if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return 'дні';
-  return 'днів';
-}
-
-function dayLabel(lang, n) {
-  return lang === 'ua' ? uaDaysWord(n) : (n === 1 ? 'day' : 'days');
-}
-
-function splitCountdown(target, now) {
-  const left = Math.max(0, target - now);
-  return {
-    days: Math.floor(left / 86400000),
-    hours: pad(Math.floor(left / 3600000) % 24),
-    mins: pad(Math.floor(left / 60000) % 60),
-  };
-}
 
 function escapeHtml(str) {
   return String(str).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -321,13 +308,6 @@ function syncHeadMeta(lang, c) {
 function render() {
   const c = content[state.lang];
   const isUa = state.lang === 'ua';
-  const now = Date.now();
-  const reg = splitCountdown(REG_DATE, now);
-  const race = splitCountdown(RACE_DATE, now);
-  const timers = [
-    { label: c.regLabel, note: c.regNote, ...reg, dLabel: dayLabel(state.lang, reg.days) },
-    { label: c.countdownLabel, note: c.countdownNote, ...race, dLabel: dayLabel(state.lang, race.days) },
-  ];
   const facts = c.factsRaw.map((f) => ({
     ...f,
     ...(/рекорд|record/i.test(f.label) ? FACT_CELL_HIGHLIGHT : FACT_CELL_DEFAULT),
@@ -362,7 +342,7 @@ function render() {
         <a href="#next-steps">${escapeHtml(c.navNextSteps)}</a>
         <a href="#strategy">${escapeHtml(c.navStrategy)}</a>
         <div class="dropdown-rule"></div>
-        <a href="${REGISTER_URL}" target="_blank" rel="noopener" class="dropdown-cta">${escapeHtml(c.ctaPrimary)}</a>
+        <a href="${SOTKA_FB_URL}" target="_blank" rel="noopener" class="dropdown-cta">${escapeHtml(c.ctaFollow)}</a>
       </div>` : ''}
     </nav>
 
@@ -373,7 +353,7 @@ function render() {
         <div class="hero-footer-row">
           <p class="hero-sub">${escapeHtml(c.heroSub)}</p>
           <div class="cta-row">
-            <a href="${REGISTER_URL}" target="_blank" rel="noopener" class="btn-primary">${escapeHtml(c.ctaPrimary)}</a>
+            <a href="${SOTKA_FB_URL}" target="_blank" rel="noopener" class="btn-primary">${escapeHtml(c.ctaFollow)}</a>
             <a href="${RULES_URL}" target="_blank" rel="noopener" class="btn-secondary">${escapeHtml(c.ctaSecondary)}</a>
           </div>
         </div>
@@ -454,21 +434,11 @@ function render() {
 
     <section class="countdown-section">
       <div class="countdown-inner">
-        <div class="timers">
-          ${timers.map((tm) => `
-          <div class="timer">
-            <p class="timer-label">${escapeHtml(tm.label)}</p>
-            <div class="timer-values">
-              <div><span class="timer-num">${tm.days}</span><span class="timer-unit">${escapeHtml(tm.dLabel)}</span></div>
-              <span class="timer-colon">:</span>
-              <div><span class="timer-num">${tm.hours}</span><span class="timer-unit">${escapeHtml(c.cdHoursLabel)}</span></div>
-              <span class="timer-colon">:</span>
-              <div><span class="timer-num">${tm.mins}</span><span class="timer-unit">${escapeHtml(c.cdMinsLabel)}</span></div>
-            </div>
-            <p class="timer-note">${escapeHtml(tm.note)}</p>
-          </div>`).join('')}
+        <div class="expect">
+          <p class="expect-title">${escapeHtml(c.expect2027Title)}</p>
+          <p class="expect-sub">${escapeHtml(c.expect2027Sub)}</p>
         </div>
-        <a href="${REGISTER_URL}" target="_blank" rel="noopener" class="countdown-cta">${escapeHtml(c.ctaPrimary)}</a>
+        <a href="${SOTKA_FB_URL}" target="_blank" rel="noopener" class="countdown-cta">${escapeHtml(c.ctaFollow)}</a>
       </div>
     </section>
 
@@ -494,9 +464,11 @@ function render() {
             <p class="results-year-heading">${escapeHtml(yr.year)}</p>
             ${yr.rows.map((item) => `
             <div class="results-item">
-              <span class="results-category">${escapeHtml(item.category)}</span>
+              <span class="results-category">${item.category}</span>
               <span class="results-result">
-                <a href="${escapeHtml(item.strava)}" target="_blank" rel="noopener" class="results-winner">${escapeHtml(item.winner)}</a>
+                ${item.strava
+                  ? `<a href="${escapeHtml(item.strava)}" target="_blank" rel="noopener" class="results-winner">${escapeHtml(item.winner)}</a>`
+                  : `<span class="results-winner">${escapeHtml(item.winner)}</span>`}
                 <span class="results-time">${escapeHtml(item.time)}</span>
               </span>
             </div>`).join('')}
@@ -532,7 +504,7 @@ function render() {
       <div class="final-inner">
         <h2 class="final-title">${escapeHtml(c.finalTitle)}</h2>
         <p class="final-sub">${escapeHtml(c.finalSub)}</p>
-        <a href="${REGISTER_URL}" target="_blank" rel="noopener" class="final-cta">${escapeHtml(c.ctaPrimary)}</a>
+        <a href="${SOTKA_FB_URL}" target="_blank" rel="noopener" class="final-cta">${escapeHtml(c.ctaFollow)}</a>
       </div>
     </section>
 
@@ -575,7 +547,7 @@ function render() {
           <p class="footer-organizers">${c.footerOrganizers}</p>
           <p class="footer-disclaimer">${c.footerDisclaimer}</p>
         </div>
-        <a href="https://www.facebook.com/events/1374282914840076/" target="_blank" rel="noopener" class="footer-fb">${escapeHtml(c.footerFb)} →</a>
+        <a href="https://www.facebook.com/velo100ka/" target="_blank" rel="noopener" class="footer-fb">${escapeHtml(c.footerFb)} →</a>
       </div>
     </footer>
   `;
@@ -656,5 +628,4 @@ document.addEventListener('keydown', (e) => {
   render();
 });
 
-setInterval(render, 30000);
 render();

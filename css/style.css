@@ -174,19 +174,15 @@ section[id] { scroll-margin-top: 90px; }
 .why-text { margin: 0; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.55; max-width: 92ch; }
 .rule-top { border-top: 2px solid var(--ink); }
 
-/* countdown */
+/* expect-2027 banner */
 .countdown-section { background: var(--ink); color: var(--bg); border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
 .countdown-inner {
   max-width: 1280px; margin: 0 auto; padding: clamp(36px, 5vw, 56px) clamp(16px, 5vw, 56px);
   display: flex; flex-wrap: wrap; gap: clamp(24px, 4vw, 48px); align-items: center; justify-content: space-between;
 }
-.timers { display: flex; flex-wrap: wrap; gap: clamp(28px, 5vw, 72px); }
-.timer-label { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-soft); margin: 0 0 14px; }
-.timer-values { display: flex; gap: clamp(12px, 2vw, 24px); align-items: baseline; }
-.timer-num { font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: clamp(32px, 4.6vw, 56px); line-height: 1; }
-.timer-unit { display: block; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--line-muted); margin-top: 6px; }
-.timer-colon { font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: clamp(22px, 3vw, 40px); color: var(--accent); }
-.timer-note { font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--line-muted); margin: 14px 0 0; }
+.expect { max-width: 60ch; }
+.expect-title { font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: clamp(32px, 4.6vw, 56px); line-height: 1; text-transform: uppercase; margin: 0; }
+.expect-sub { font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--line-muted); line-height: 1.6; margin: 16px 0 0; }
 .countdown-cta { display: inline-flex; align-items: center; font-family: 'Unbounded', sans-serif; font-weight: 600; font-size: 15px; text-transform: uppercase; color: var(--ink); background: var(--bg); border: 3px solid var(--accent); padding: 17px 30px; text-decoration: none; box-shadow: 6px 6px 0 var(--accent); }
 
 /* schedule */
@@ -198,6 +194,8 @@ section[id] { scroll-margin-top: 90px; }
 /* results */
 .results-section { padding: 0 0 clamp(44px, 6vw, 72px); }
 .results-years-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: clamp(24px, 4vw, 48px); }
+.results-years-grid > div { display: flex; flex-direction: column; }
+.results-years-grid > div .rule-top { margin-top: auto; }
 .results-year-heading { font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(18px, 2.2vw, 24px); margin: 0 0 14px; }
 .results-item { display: flex; flex-wrap: nowrap; gap: 6px 20px; justify-content: space-between; padding: 12px 0; border-top: 2px solid var(--ink); align-items: baseline; }
 .results-category { font-size: 14.5px; color: var(--muted); flex: 1 1 auto; min-width: 0; }
